@@ -1009,3 +1009,16 @@ main{min-height:100dvh;background-color:#02050a}
     height: 14px;
   }
 }
+
+
+@media (min-width: 981px) {
+  .ecosystem-caption-v6 b {
+    font-size: 18px;
+    line-height: 1.4;
+  }
+
+  .ecosystem-caption-v6 span {
+    font-size: 14px;
+    line-height: 1.5;
+  }
+}
