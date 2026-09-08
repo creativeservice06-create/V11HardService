@@ -31,6 +31,51 @@ export default function Home(){return <main>
 <section className="section seo-focus-section" aria-labelledby="seo-focus-title"><div className="section-head"><div><div className="eyebrow">PENTRU TIPUL TĂU DE BUSINESS</div><h2 id="seo-focus-title">Promovare online pentru servicii locale, companii B2B și magazine online.</h2></div><p>Strategia diferă în funcție de intenția clientului. Alegem canalele, pagina de destinație și tracking-ul potrivit pentru modul în care oamenii caută și cumpără.</p></div><div className="seo-focus-grid"><article><small>SERVICII LOCALE</small><h3>Google Ads pentru cereri și apeluri.</h3><p>Campanii Search pentru căutări cu intenție ridicată, pagini locale clare și măsurarea apelurilor sau formularelor.</p></article><article><small>B2B & SERVICII</small><h3>Lead generation cu mesaj și targetare relevante.</h3><p>Google, Meta și TikTok conectate cu landing pages, formulare, remarketing și automatizări pentru solicitările primite.</p></article><article><small>E-COMMERCE</small><h3>Promovare produse și măsurarea vânzărilor.</h3><p>Google Shopping / Performance Max, Meta și TikTok cu tracking pentru produs, coș, checkout și valoarea comenzilor.</p></article></div></section>
 <section className="section" id="proiecte"><div className="section-head"><div><div className="eyebrow">PROIECTE</div><h2>Experiență construită în proiecte reale.</h2></div><p>Website-uri și proiecte pentru care am lucrat pe zona de dezvoltare, promovare sau optimizare.</p></div><div className="project-marquee"><div>{[...projects,...projects].map((p,i)=><span key={`${p}-${i}`}>{p}</span>)}</div></div></section>
 <section className="section" id="preturi"><div className="section-head"><div><div className="eyebrow">PREȚURI</div><h2>Pachete de administrare și promovare online.</h2></div><p>Tarife orientative. Costul final se stabilește în funcție de obiective, numărul campaniilor și volumul de lucru.</p></div><div className="pricing-grid">{plans.map(plan=><article className={`price-card ${plan.featured?'featured':''}`} key={plan.name}>{plan.featured&&<span className="recommended">RECOMANDAT</span>}<small>{plan.name}</small><h3>{plan.price} <span>{plan.cadence}</span></h3><p>{plan.subtitle}</p><ul>{plan.features.map(f=><li key={f}><Check size={14}/>{f}</li>)}</ul><a href="#contact" className={plan.featured?'primary':'secondary'}>Solicită ofertă</a></article>)}</div></section>
-<section className="section contact-section" id="contact"><div className="contact-copy"><div className="eyebrow">HAI SĂ DISCUTĂM</div><h2>Cere o ofertă pentru promovarea afacerii tale online.</h2><p>Îți putem propune o structură clară pentru promovare, website și măsurarea rezultatelor. Completează formularul, iar solicitarea ajunge direct la noi.</p></div><ContactForm/></section>
+<section className="section contact-section" id="contact"><div className="contact-copy"><div className="eyebrow">HAI SĂ DISCUTĂM</div><h2>Cere o ofertă pentru promovarea afacerii tale online.</h2><p>Îți putem propune o structură clară pentru promovare, website și măsurarea rezultatelor. Completează formularul, iar solicitarea ajunge direct la noi.</p></div><div className="contact-form-column">
+  <ContactForm />
+
+  <aside className="company-details" aria-label="Datele firmei">
+    <div className="company-details-header">
+      <div className="company-details-icon" aria-hidden="true">
+        <svg
+          width="28"
+          height="28"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="1.6"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        >
+          <path d="M3 21h18" />
+          <path d="M5 21V3h10v18" />
+          <path d="M15 9h4v12" />
+          <path d="M8 6h1m2 0h1M8 9h1m2 0h1M8 12h1m2 0h1" />
+          <path d="M9 21v-5h3v5M17 12v1m0 3v1" />
+        </svg>
+      </div>
+
+      <div>
+        <p className="company-details-label">DATELE FIRMEI</p>
+        <h3>HARD SERVICE SRL</h3>
+      </div>
+    </div>
+
+    <dl className="company-details-grid">
+      <div>
+        <dt>CUI</dt>
+        <dd>5451133</dd>
+      </div>
+
+      <div>
+        <dt>Data înființării</dt>
+        <dd>
+          <time dateTime="1994-03-17">17.03.1994</time>
+        </dd>
+      </div>
+    </dl>
+  </aside>
+</div>
+</section>
 <footer><a className="brand brand-v4" href="#top"><b>HARD SERVICE</b><span>MARKETING</span></a><p>Google Ads · Meta Ads · TikTok Ads · Web · Tracking</p><a href={phoneHref}>0740 231 358</a></footer><a className="floating-call" href={phoneHref} aria-label="Sună Hard Service"><Phone/></a>
 </main>}
