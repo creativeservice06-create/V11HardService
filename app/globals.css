@@ -947,3 +947,16 @@ main{min-height:100dvh;background-color:#02050a}
   .real-phone-search-v9{transform:scale(.58) rotateY(-4deg) rotateZ(.6deg)!important}
   .google-browser-v9{transform:scale(.62)!important}.plumber-site-v9{transform:scale(.61)!important}.conversion-v9{transform:scale(.72)!important}.client-connection-v9{transform:scale(.76)!important}
 }
+
+
+/* Texte de sub butoanele principale — doar desktop */
+@media (min-width: 981px) {
+  .hero-proof {
+    font-size: 14px;
+  }
+
+  .hero-proof svg {
+    width: 17px;
+    height: 17px;
+  }
+}
