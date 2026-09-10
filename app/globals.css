@@ -1165,3 +1165,11 @@ main{min-height:100dvh;background-color:#02050a}
     border-top: 1px solid #1b354b;
   }
 }
+
+#servicii,
+#cum-functioneaza,
+#proiecte,
+#preturi,
+#contact {
+  scroll-margin-top: 110px;
+}
