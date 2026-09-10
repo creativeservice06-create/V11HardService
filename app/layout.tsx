@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from 'next';
 import './globals.css';
+import { Phone } from 'lucide-react';
 
 const siteUrl = 'https://www.hardservicesrl.ro';
 
@@ -141,6 +142,13 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }} />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }} />
         {children}
+         <a
+    className="floating-call global-floating-call"
+    href="tel:+40740231358"
+    aria-label="Sună Hard Service"
+  >
+    <Phone size={24} />
+  </a>
       </body>
     </html>
   );
