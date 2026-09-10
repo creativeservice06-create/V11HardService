@@ -45,16 +45,39 @@ export default function PoliticaCookieUri() {
         </div>
       </section>
 
-      <footer>
-        <a className="brand brand-v4" href="/#top">
-          <b>HARD SERVICE</b>
-          <span>MARKETING</span>
-        </a>
+     <footer>
+  <a className="brand brand-v4" href="/#top">
+    <b>HARD SERVICE</b>
+    <span>MARKETING</span>
+  </a>
 
-        <p>Google Ads · Meta Ads · TikTok Ads · Web · Tracking</p>
+  <p>Google Ads · Meta Ads · TikTok Ads · Web · Tracking</p>
 
-        <a href="tel:+40740231358">0740 231 358</a>
-      </footer>
+  <div
+    style={{
+      display: "flex",
+      justifyContent: "center",
+      alignItems: "center",
+      gap: "16px",
+      flexWrap: "wrap",
+      margin: "10px 0 16px",
+      fontSize: "12px",
+      opacity: 0.7,
+    }}
+  >
+    <a href="/politica-confidentialitate">
+      Politică de confidențialitate
+    </a>
+
+    <span>·</span>
+
+    <a href="/politica-cookie-uri">
+      Politică de cookie-uri
+    </a>
+  </div>
+
+  <a href="tel:+40740231358">0740 231 358</a>
+</footer>
     </main>
   );
 }
