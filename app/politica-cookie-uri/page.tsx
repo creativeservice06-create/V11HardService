@@ -2,8 +2,7 @@ import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Politica de cookie-uri | Hard Service",
-  description:
-    "Politica de cookie-uri a website-ului Hard Service și informații privind utilizarea cookie-urilor.",
+  description: "Politica de cookie-uri a site-ului Hard Service.",
 };
 
 export default function PoliticaCookieUri() {
@@ -12,7 +11,6 @@ export default function PoliticaCookieUri() {
       style={{
         minHeight: "100vh",
         background: "#080b10",
-        color: "#ffffff",
         padding: "60px 20px",
       }}
     >
@@ -38,9 +36,13 @@ export default function PoliticaCookieUri() {
           ← Înapoi la Hard Service
         </a>
 
-        <h1 style={{ marginBottom: "30px" }}>Politica de cookie-uri</h1>
+        <h1>Politica de cookie-uri</h1>
 
-        <div id="cky-auto-cookie-policy"></div>
+        <script
+          id="cky-cookie-policy"
+          type="text/javascript"
+          src="https://cdn-cookieyes.com/client_data/87acb7d68fe0fd46ac63355ae803884b/cookie-policy/script.js"
+        ></script>
       </div>
     </main>
   );
