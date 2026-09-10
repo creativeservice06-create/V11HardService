@@ -23,6 +23,7 @@ const plans=[
 const projects=['somag.ro','permismoto.ro','carnetbarca.ro','serviciinonstop.ro','meddev.md','hardservicesrl.ro','instalatori-nonstop.ro','andhothot.com','andracoletarie.ro','zeroplagiat.ro','emailatcazibaie.ro','ignifugare.eu'];
 
 export default function Home(){return <main>
+  <HashScrollHandler />
 <SiteHeader/>
 <section className="hero hero-v4 hero-v5" id="top"><div className="hero-grid"/><div className="hero-glow"/><div className="hero-copy"><div className="eyebrow">PROMOVARE ONLINE · GOOGLE ADS · META · TIKTOK</div><h1>Promovare online care face afacerea ta <span>ușor de găsit</span> și de contactat.</h1><p>Administrare Google Ads, Facebook & Instagram Ads și TikTok Ads, conectate cu website-ul, magazinele online și tracking-ul conversiilor. De la căutarea clientului până la apel, formular sau vânzare.</p><div className="hero-actions"><a className="primary" href={phoneHref}><Phone size={18}/> 0740 231 358</a><a className="secondary" href="#contact">Solicită o ofertă <ArrowRight size={18}/></a></div><div className="hero-proof"><span><Check size={14}/> Strategie personalizată</span><span><Check size={14}/> Tracking real</span><span><Check size={14}/> Totul într-un singur loc</span></div></div><HeroMarketingVisual/></section>
 <MarketingJourney/>
