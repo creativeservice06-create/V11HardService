@@ -1,12 +1,173 @@
 import type { Metadata } from "next";
 import SiteHeader from "@/components/SiteHeader";
-import PolicyLink from "@/components/PolicyLink";
-
 
 export const metadata: Metadata = {
   title: "Politica de cookie-uri | Hard Service",
   description: "Politica de cookie-uri a site-ului Hard Service.",
 };
+
+const cookiePolicyHtml = `
+<style>
+  a.cky-banner-element {
+    padding: 8px 30px;
+    background: #f8f9fa;
+    color: #858a8f;
+    border: 1px solid #dee2e6;
+    box-sizing: border-box;
+    border-radius: 2px;
+    cursor: pointer;
+    display: inline-block;
+    margin-top: 10px;
+  }
+
+  .cookie-policy-content h1 {
+    font-size: 38px;
+    margin-bottom: 20px;
+  }
+
+  .cookie-policy-content h2 {
+    font-size: 26px;
+    margin-top: 35px;
+    margin-bottom: 15px;
+  }
+
+  .cookie-policy-content p {
+    line-height: 1.7;
+    margin-bottom: 14px;
+  }
+
+  .cookie-policy-content a {
+    word-break: break-word;
+  }
+
+  @media (max-width: 700px) {
+    .cookie-policy-content h1 {
+      font-size: 30px;
+    }
+
+    .cookie-policy-content h2 {
+      font-size: 22px;
+    }
+  }
+</style>
+
+<h1 class="cookie-policy-h1">
+  Politica de cookie-uri
+</h1>
+
+<div class="cookie-policy-date-container">
+  <p>Data intrării în vigoare: 10 septembrie 2026</p>
+  <p>Ultima actualizare: 10 septembrie 2026</p>
+</div>
+
+<h2>Ce sunt cookie-urile?</h2>
+
+<div class="cookie-policy-p">
+  <p>
+    Această Politică privind cookie-urile explică ce sunt cookie-urile,
+    cum le folosim, tipurile de cookie-uri pe care le folosim,
+    informațiile pe care le colectăm folosind cookie-uri și modul
+    în care sunt utilizate aceste informații, precum și modul în care
+    puteți gestiona setările cookie-urilor.
+  </p>
+
+  <p>
+    Cookie-urile sunt fișiere text mici utilizate pentru a stoca mici
+    fragmente de informații. Acestea sunt stocate pe dispozitivul dvs.
+    atunci când un site web se încarcă în browser. Aceste cookie-uri
+    ajută la funcționarea corectă a site-ului, sporesc securitatea,
+    oferă o experiență mai bună utilizatorilor și permit analizarea
+    performanței site-ului.
+  </p>
+</div>
+
+<h2>Cum folosim cookie-urile?</h2>
+
+<div class="cookie-policy-p">
+  <p>
+    Ca majoritatea serviciilor online, site-ul nostru utilizează atât
+    cookie-uri proprii, cât și cookie-uri terțe în diverse scopuri.
+    Cookie-urile strict necesare sunt utilizate pentru funcționarea
+    corectă și sigură a site-ului.
+  </p>
+
+  <p>
+    Cookie-urile terțe ne pot ajuta să înțelegem modul în care este
+    utilizat site-ul, să măsurăm performanța campaniilor publicitare,
+    să menținem serviciile în siguranță și să îmbunătățim experiența
+    utilizatorilor.
+  </p>
+
+  <p>
+    Cookie-urile pentru analiză și publicitate sunt utilizate în
+    conformitate cu preferințele de consimțământ ale utilizatorului.
+  </p>
+</div>
+
+<h2>Tipuri de cookie-uri pe care le folosim</h2>
+
+<div class="cky-audit-table-element"></div>
+
+<h2>Gestionați preferințele privind cookie-urile</h2>
+
+<a class="cky-banner-element">
+  Preferințe cookie
+</a>
+
+<br /><br />
+
+<div>
+  <p>
+    Puteți modifica setările cookie-urilor oricând făcând clic pe
+    butonul „Preferințe cookie” de mai sus. Acest lucru vă permite să
+    redeschideți panoul de consimțământ CookieYes și să vă modificați
+    preferințele sau să vă retrageți consimțământul.
+  </p>
+
+  <p>
+    De asemenea, browserele oferă posibilitatea de a bloca sau șterge
+    cookie-urile din setările proprii.
+  </p>
+
+  <p>
+    Chrome:
+    <a
+      href="https://support.google.com/accounts/answer/32050"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      Gestionarea cookie-urilor în Chrome
+    </a>
+  </p>
+
+  <p>
+    Safari:
+    <a
+      href="https://support.apple.com/guide/safari/manage-cookies-sfri11471/mac"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      Gestionarea cookie-urilor în Safari
+    </a>
+  </p>
+
+  <p>
+    Firefox:
+    <a
+      href="https://support.mozilla.org/kb/clear-cookies-and-site-data-firefox"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      Gestionarea cookie-urilor în Firefox
+    </a>
+  </p>
+
+  <p>
+    Dacă utilizați un alt browser, consultați documentația oficială
+    a browserului respectiv.
+  </p>
+</div>
+`;
 
 export default function PoliticaCookieUri() {
   return (
@@ -29,91 +190,50 @@ export default function PoliticaCookieUri() {
             padding: "clamp(24px, 5vw, 50px)",
           }}
         >
-          <h1
-            style={{
-              fontSize: "clamp(32px, 5vw, 48px)",
-              marginTop: 0,
-              marginBottom: "35px",
+          <div
+            className="cookie-policy-content"
+            dangerouslySetInnerHTML={{
+              __html: cookiePolicyHtml,
             }}
-          >
-            Politica de cookie-uri
-          </h1>
-
-       <!-- Start CookieYes cookie policy -->
-<style>
-  a.cky-banner-element {
-    padding: 8px 30px;
-    background: #f8f9fa;
-    color: #858a8f;
-    border: 1px solid #dee2e6;
-    box-sizing: border-box;
-    border-radius: 2px;
-    cursor: pointer
-  }
-</style>
-<h1 class="cookie-policy-h1">Cookie Policy</h1>
-<div class="cookie-policy-date-container">
-  <p>Effective date: September 10, 2026</p>
-  <p>Last updated: September 10, 2026</p>
-</div>&nbsp;<h2>Ce sunt cookie-urile?</h2>
-<div class="cookie-policy-p">
-  <p>Această Politică privind cookie-urile explică ce sunt cookie-urile, cum le folosim, tipurile de cookie-uri pe care le folosim (adică informațiile pe care le colectăm folosind cookie-uri și cum sunt utilizate aceste informații) și cum să gestionați setările cookie-urilor.</p>
-  <p>Cookie-urile sunt fișiere text mici utilizate pentru a stoca mici fragmente de informații. Acestea sunt stocate pe dispozitivul dvs. atunci când un site web se încarcă în browser. Aceste cookie-uri ajută la asigurarea funcționării corecte a site-ului web, sporesc securitatea, oferă o experiență mai bună pentru utilizatori și analizează performanța pentru a identifica ce funcționează și unde sunt necesare îmbunătățiri.</p>
-</div>&nbsp;<h2>Cum folosim cookie-urile?</h2>
-<div class="cookie-policy-p">
-  <p>Ca majoritatea serviciilor online, site-ul nostru web utilizează atât cookie-uri proprii, cât și cookie-uri terțe în diverse scopuri. Cookie-urile proprii sunt necesare în primul rând pentru ca site-ul web să funcționeze corect și nu colectează date de identificare personală.</p>
-  <p>Cookie-urile terțe utilizate pe site-ul nostru web ne ajută în principal să înțelegem cum funcționează site-ul web, să urmărim cum interacționați cu acesta, să menținem serviciile noastre în siguranță, să livrăm reclame relevante și să îmbunătățim experiența generală a utilizatorului, îmbunătățind în același timp viteza interacțiunilor viitoare cu site-ul nostru web.</p>
-</div>&nbsp;<h2>Tipuri de cookie-uri pe care le folosim</h2>
-<div class="cky-audit-table-element"></div>&nbsp;<h2 style="margin-bottom: 20px">Gestionați preferințele privind cookie-urile</h2><a class="cky-banner-element">Consent Preferences</a><br />
-<div>
-  <p>Puteți modifica setările cookie-urilor oricând, făcând clic pe butonul „Preferințe consimțământ” de mai sus. Acest lucru vă va permite să reaccesați bannerul de consimțământ pentru cookie-uri și să vă actualizați preferințele sau să vă retrageți imediat consimțământul.</p>
-  <p><br></p>
-  <p>În plus, diferite browsere oferă diverse metode de blocare și ștergere a cookie-urilor utilizate de site-uri web. Puteți ajusta setările browserului pentru a bloca sau șterge cookie-urile. Mai jos găsiți linkuri către documente de asistență despre cum să gestionați și să ștergeți cookie-urile în principalele browsere web. Chrome: https://support.google.com/accounts/answer/32050</p>
-  <p>Safari: https://support.apple.com/en-in/guide/safari/sfri11471/mac</p>
-  <p>Firefox: https://support.mozilla.org/en-US/kb/clear-cookies-and-site-data-firefox?redirectslug=delete-cookies-remove-info-websites-stored&amp;redirectlocale=en-US</p>
-  <p>Internet Explorer: https://support.microsoft.com/en-us/topic/how-to-delete-cookie-files-in-internet-explorer-bca9446f-d873-78de-77ba-d42645fa52fc</p>
-  <p>Dacă utilizați un alt browser web, vă rugăm să consultați documentația oficială de asistență a acestuia.</p>
-</div>&nbsp;<p class="cookie-policy-p"> Cookie Policy generated by <a target="_blank" rel="noopener noreferrer" href="https://www.cookiepolicygenerator.ai?utm_source=CPG&utm_medium=footer&utm_campaign=UW">CookieYes - Cookie Policy Generator</a></p>
-<!-- End CookieYes cookie policy -->
-
-
-          
+          />
         </div>
       </section>
 
-     <footer>
-  <a className="brand brand-v4" href="/#top">
-    <b>HARD SERVICE</b>
-    <span>MARKETING</span>
-  </a>
+      <footer>
+        <a className="brand brand-v4" href="/">
+          <b>HARD SERVICE</b>
+          <span>MARKETING</span>
+        </a>
 
-  <p>Google Ads · Meta Ads · TikTok Ads · Web · Tracking</p>
+        <p>Google Ads · Meta Ads · TikTok Ads · Web · Tracking</p>
 
-  <div
-    style={{
-      display: "flex",
-      justifyContent: "center",
-      alignItems: "center",
-      gap: "16px",
-      flexWrap: "wrap",
-      margin: "10px 0 16px",
-      fontSize: "12px",
-      opacity: 0.7,
-    }}
-  >
-    <PolicyLink href="/politica-confidentialitate">
-  Politică de confidențialitate
-</PolicyLink>
+        <div
+          style={{
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+            gap: "16px",
+            flexWrap: "wrap",
+            margin: "10px 0 16px",
+            fontSize: "12px",
+            opacity: 0.7,
+          }}
+        >
+          <a href="/politica-confidentialitate">
+            Politică de confidențialitate
+          </a>
 
-<span>·</span>
+          <span>·</span>
 
-<PolicyLink href="/politica-cookie-uri">
-  Politică de cookie-uri
-</PolicyLink>
-  </div>
+          <a href="/politica-cookie-uri">
+            Politică de cookie-uri
+          </a>
+        </div>
 
-  <a href="tel:+40740231358">0740 231 358</a>
-</footer>
+        <a href="tel:+40740231358">
+          0740 231 358
+        </a>
+      </footer>
     </main>
   );
 }
