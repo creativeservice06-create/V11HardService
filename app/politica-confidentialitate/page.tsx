@@ -1,51 +1,76 @@
 import type { Metadata } from "next";
+import SiteHeader from "@/components/SiteHeader";
 
 export const metadata: Metadata = {
   title: "Politica de confidențialitate | Hard Service",
   description:
-    "Politica de confidențialitate și protecția datelor cu caracter personal pentru website-ul Hard Service.",
+    "Politica de confidențialitate și protecția datelor cu caracter personal pentru Hard Service.",
 };
 
 export default function PoliticaConfidentialitate() {
   return (
-    <main
-      style={{
-        minHeight: "100vh",
-        background: "#080b10",
-        color: "#ffffff",
-        padding: "60px 20px",
-      }}
-    >
-      <div
+    <main>
+      <SiteHeader />
+
+      <section
         style={{
-          maxWidth: "1000px",
+          maxWidth: "1100px",
           margin: "0 auto",
-          background: "#ffffff",
-          color: "#151515",
-          borderRadius: "18px",
-          padding: "40px",
+          padding: "130px 20px 80px",
+          minHeight: "80vh",
         }}
       >
-        <a
-          href="/"
+        <div
           style={{
-            display: "inline-block",
-            marginBottom: "30px",
-            color: "#555",
-            textDecoration: "none",
+            background: "#ffffff",
+            color: "#151515",
+            borderRadius: "18px",
+            padding: "clamp(24px, 5vw, 50px)",
           }}
         >
-          ← Înapoi la Hard Service
+          <h1
+            style={{
+              fontSize: "clamp(32px, 5vw, 48px)",
+              marginTop: 0,
+              marginBottom: "35px",
+            }}
+          >
+            Politica de confidențialitate
+          </h1>
+
+          {/* AICI VINE CODUL COOKIEYES PENTRU PRIVACY POLICY */}
+
+        </div>
+      </section>
+
+      <footer>
+        <a className="brand brand-v4" href="/#top">
+          <b>HARD SERVICE</b>
+          <span>MARKETING</span>
         </a>
 
-        <h1 style={{ marginBottom: "30px" }}>
-          Politica de confidențialitate
-        </h1>
+        <p>Google Ads · Meta Ads · TikTok Ads · Web · Tracking</p>
 
-        <div id="privacy-policy-content">
-          Politica de confidențialitate se încarcă aici.
+        <div
+          style={{
+            display: "flex",
+            gap: "16px",
+            flexWrap: "wrap",
+            justifyContent: "center",
+            marginBottom: "16px",
+          }}
+        >
+          <a href="/politica-confidentialitate">
+            Politică de confidențialitate
+          </a>
+
+          <a href="/politica-cookie-uri">
+            Politică de cookie-uri
+          </a>
         </div>
-      </div>
+
+        <a href="tel:+40740231358">0740 231 358</a>
+      </footer>
     </main>
   );
 }
