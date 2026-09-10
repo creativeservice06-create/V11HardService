@@ -77,5 +77,37 @@ export default function Home(){return <main>
   </aside>
 </div>
 </section>
-<footer><a className="brand brand-v4" href="#top"><b>HARD SERVICE</b><span>MARKETING</span></a><p>Google Ads · Meta Ads · TikTok Ads · Web · Tracking</p><a href={phoneHref}>0740 231 358</a></footer><a className="floating-call" href={phoneHref} aria-label="Sună Hard Service"><Phone/></a>
+<footer>
+  <a className="brand brand-v4" href="#top">
+    <b>HARD SERVICE</b>
+    <span>MARKETING</span>
+  </a>
+
+  <p>Google Ads · Meta Ads · TikTok Ads · Web · Tracking</p>
+
+  <div
+    style={{
+      display: 'flex',
+      justifyContent: 'center',
+      alignItems: 'center',
+      gap: '16px',
+      flexWrap: 'wrap',
+      margin: '10px 0 16px',
+      fontSize: '12px',
+      opacity: 0.7,
+    }}
+  >
+    <a href="/politica-confidentialitate">
+      Politică de confidențialitate
+    </a>
+
+    <span>·</span>
+
+    <a href="/politica-cookie-uri">
+      Politică de cookie-uri
+    </a>
+  </div>
+
+  <a href={phoneHref}>0740 231 358</a>
+</footer>
 </main>}
