@@ -4,6 +4,7 @@ import HeroMarketingVisual from '@/components/HeroMarketingVisual';
 import ContactForm from '@/components/ContactForm';
 import SiteHeader from '@/components/SiteHeader';
 import HashScrollHandler from '@/components/HashScrollHandler';
+import PolicyLink from '@/components/PolicyLink';
 
 const phoneHref='tel:+40740231358';
 const services=[
@@ -99,15 +100,15 @@ export default function Home(){return <main>
       opacity: 0.7,
     }}
   >
-    <a href="/politica-confidentialitate">
-      Politică de confidențialitate
-    </a>
+    <PolicyLink href="/politica-confidentialitate">
+  Politică de confidențialitate
+</PolicyLink>
 
-    <span>·</span>
+<span>·</span>
 
-    <a href="/politica-cookie-uri">
-      Politică de cookie-uri
-    </a>
+<PolicyLink href="/politica-cookie-uri">
+  Politică de cookie-uri
+</PolicyLink>
   </div>
 
   <a href={phoneHref}>0740 231 358</a>
