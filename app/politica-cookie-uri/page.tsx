@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import SiteHeader from "@/components/SiteHeader";
-import CookiePolicyEmbed from "@/components/CookiePolicyEmbed";
+
 
 export const metadata: Metadata = {
   title: "Politica de cookie-uri | Hard Service",
@@ -38,7 +38,11 @@ export default function PoliticaCookieUri() {
             Politica de cookie-uri
           </h1>
 
-          <CookiePolicyEmbed />
+          <script
+  id="cky-cookie-policy"
+  type="text/javascript"
+  src="https://cdn-cookieyes.com/client_data/87acb7d68fe0fd46ac63355ae803884b/cookie-policy/script.js"
+></script>
         </div>
       </section>
 
