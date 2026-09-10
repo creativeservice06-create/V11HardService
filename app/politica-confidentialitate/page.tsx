@@ -38,8 +38,11 @@ export default function PoliticaConfidentialitate() {
             Politica de confidențialitate
           </h1>
 
-          {/* AICI VINE CODUL COOKIEYES PENTRU PRIVACY POLICY */}
-
+          <script
+            id="cky-privacy-policy"
+            type="text/javascript"
+            src="https://cdn-cookieyes.com/client_data/87acb7d68fe0fd46ac63355ae803884b/privacy-policy/script.js"
+          ></script>
         </div>
       </section>
 
