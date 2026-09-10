@@ -3,6 +3,7 @@ import MarketingJourney from '@/components/MarketingJourney';
 import HeroMarketingVisual from '@/components/HeroMarketingVisual';
 import ContactForm from '@/components/ContactForm';
 import SiteHeader from '@/components/SiteHeader';
+import HashScrollHandler from '@/components/HashScrollHandler';
 
 const phoneHref='tel:+40740231358';
 const services=[
