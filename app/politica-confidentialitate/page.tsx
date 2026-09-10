@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import SiteHeader from "@/components/SiteHeader";
+import PolicyLink from "@/components/PolicyLink";
 
 export const metadata: Metadata = {
   title: "Politica de confidențialitate | Hard Service",
@@ -63,13 +64,15 @@ export default function PoliticaConfidentialitate() {
             marginBottom: "16px",
           }}
         >
-          <a href="/politica-confidentialitate">
-            Politică de confidențialitate
-          </a>
+          <PolicyLink href="/politica-confidentialitate">
+  Politică de confidențialitate
+</PolicyLink>
 
-          <a href="/politica-cookie-uri">
-            Politică de cookie-uri
-          </a>
+<span>·</span>
+
+<PolicyLink href="/politica-cookie-uri">
+  Politică de cookie-uri
+</PolicyLink>
         </div>
 
         <a href="tel:+40740231358">0740 231 358</a>
