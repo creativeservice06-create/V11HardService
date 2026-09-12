@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from 'next';
 import './globals.css';
 import { Phone } from 'lucide-react';
+import { Analytics } from "@vercel/analytics/next";
 
 const siteUrl = 'https://www.hardservicesrl.ro';
 
@@ -142,6 +143,8 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }} />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }} />
         {children}
+<Analytics />
+        
          <a
     className="floating-call global-floating-call"
     href="tel:+40740231358"
