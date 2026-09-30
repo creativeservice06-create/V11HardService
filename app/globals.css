@@ -7402,3 +7402,32 @@ main{min-height:100dvh;background-color:#02050a}
     padding: 9px 11px;
   }
 }
+
+.service-more {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  margin-top: auto;
+  padding-top: 18px;
+  color: rgba(255, 255, 255, 0.86);
+  font-size: 13px;
+  font-weight: 600;
+  text-decoration: none;
+  transition:
+    color 0.2s ease,
+    gap 0.2s ease;
+}
+
+.service-more svg {
+  transition: transform 0.2s ease;
+}
+
+.service-more:hover {
+  color: #fff;
+  gap: 10px;
+}
+
+.service-more:hover svg {
+  transform: translateX(2px);
+}
+
