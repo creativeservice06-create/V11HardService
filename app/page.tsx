@@ -1,20 +1,22 @@
-import { ArrowRight, Check, Code2, Layers3, Megaphone, Phone, ShoppingCart, Sparkles, Target, Wrench } from 'lucide-react';
+import {
+  ArrowRight,
+  Check,
+  Code2,
+  Layers3,
+  Megaphone,
+  Phone,
+  ShoppingCart,
+  Sparkles,
+  Target,
+  Wrench,
+} from 'lucide-react';
 import MarketingJourney from '@/components/MarketingJourney';
 import HeroMarketingVisual from '@/components/HeroMarketingVisual';
 import ContactForm from '@/components/ContactForm';
 import SiteHeader from '@/components/SiteHeader';
 import HashScrollHandler from '@/components/HashScrollHandler';
 import PolicyLink from '@/components/PolicyLink';
-import {
-  ArrowRight,
-  Check,
-  Code2,
-  Megaphone,
-  ShoppingCart,
-  Sparkles,
-  Target,
-  Wrench,
-} from 'lucide-react';
+
 
 const phoneHref = 'tel:+40740231358';
 
