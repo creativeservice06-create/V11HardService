@@ -331,15 +331,33 @@ export default function SeoTehnicPage() {
           </p>
         </div>
 
-        <div className="service-grid service-grid-v3 store-types-grid">
-          {seoAreas.map(({ icon: Icon, title, text }) => (
-            <article
-              className="service-card service-card-v3"
-              key={title}
-            >
-              <div className="service-icon">
-                <Icon />
-              </div>
+        <div className="service-grid service-grid-v3">
+  {services.map(({ icon: Icon, title, href, text, points }) => (
+    <article className="service-card service-card-v3" key={title}>
+      <div className="service-icon">
+        <Icon />
+      </div>
+
+      <h3>{title}</h3>
+
+      <p>{text}</p>
+
+      <ul>
+        {points.map((point) => (
+          <li key={point}>
+            <Check size={14} />
+            {point}
+          </li>
+        ))}
+      </ul>
+
+      <a href={href} className="service-more">
+        <span>Vezi mai mult</span>
+        <ArrowRight size={16} />
+      </a>
+    </article>
+  ))}
+</div>
 
               <h3>{title}</h3>
 
