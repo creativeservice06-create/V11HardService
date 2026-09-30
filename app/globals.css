@@ -1350,273 +1350,574 @@ main{min-height:100dvh;background-color:#02050a}
 
 
 /* =========================================================
-   GOOGLE ADS - SIMPLE SERVICE PAGE
+   GOOGLE ADS SERVICE PAGE
    ========================================================= */
 
-.google-ads-simple-page{
+.google-ads-page{
   min-height:100vh;
 }
 
-.google-simple-hero{
-  max-width:1180px;
+.google-ads-hero{
+  position:relative;
+  overflow:hidden;
+}
+
+.google-ads-hero-grid{
+  position:absolute;
+  inset:0;
+  pointer-events:none;
+  background:
+    linear-gradient(rgba(255,255,255,.025) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(255,255,255,.025) 1px,transparent 1px);
+  background-size:60px 60px;
+  mask-image:linear-gradient(to bottom,#000,transparent 92%);
+}
+
+.google-ads-hero-inner{
+  position:relative;
+  max-width:1250px;
+  min-height:770px;
   margin:0 auto;
-  padding:150px 30px 85px;
+  padding:145px 30px 90px;
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  align-items:center;
+  gap:45px;
 }
 
-.google-simple-hero-inner{
-  max-width:900px;
+.google-ads-hero-copy{
+  position:relative;
+  z-index:3;
 }
 
-.google-simple-breadcrumbs{
+.google-ads-breadcrumbs{
   display:flex;
   flex-wrap:wrap;
+  align-items:center;
   gap:8px;
-  margin-bottom:28px;
+  margin-bottom:24px;
+  color:#64798e;
   font-size:12px;
-  color:#65798d;
 }
 
-.google-simple-breadcrumbs a{
-  color:#849cb2;
+.google-ads-breadcrumbs a{
+  color:#8aa0b4;
 }
 
-.google-simple-breadcrumbs strong{
-  color:#d5e0e8;
+.google-ads-breadcrumbs strong{
+  color:#d8e2ea;
 }
 
-.google-simple-hero h1{
-  max-width:900px;
-  margin:18px 0 24px;
-  font-size:clamp(46px,6vw,74px);
-  line-height:.98;
-  letter-spacing:-.06em;
-}
-
-.google-simple-lead{
+.google-ads-hero h1{
   max-width:760px;
-  color:#99aabc;
+  margin:19px 0 24px;
+  font-size:clamp(48px,5.8vw,78px);
+  line-height:.97;
+  letter-spacing:-.065em;
+}
+
+.google-ads-hero h1 span{
+  color:#3aa4ff;
+}
+
+.google-ads-hero-copy>p{
+  max-width:700px;
+  color:#a0afbd;
   font-size:18px;
   line-height:1.7;
 }
 
-.google-simple-actions{
-  display:flex;
-  flex-wrap:wrap;
-  gap:10px;
-  margin-top:28px;
-}
-
-.google-simple-section{
+.google-ads-hero-visual{
   position:relative;
-}
-
-.google-simple-columns{
-  display:grid;
-  grid-template-columns:repeat(2,1fr);
-  gap:14px;
-}
-
-.google-simple-columns-3{
-  grid-template-columns:repeat(3,1fr);
-}
-
-.google-simple-columns>div{
-  padding:25px;
-  border:1px solid #162d42;
-  border-radius:18px;
-  background:linear-gradient(145deg,#09131f,#050a10);
-}
-
-.google-simple-columns h3{
-  margin:0 0 10px;
-  font-size:21px;
-}
-
-.google-simple-columns p{
-  margin:0;
-  color:#8293a5;
-  line-height:1.65;
-}
-
-.google-simple-list{
-  display:grid;
-  grid-template-columns:repeat(2,1fr);
-  gap:0 35px;
-  border-top:1px solid rgba(255,255,255,.06);
-}
-
-.google-simple-list>div{
+  min-height:500px;
   display:flex;
-  gap:12px;
-  padding:22px 0;
-  border-bottom:1px solid rgba(255,255,255,.06);
+  align-items:center;
+  justify-content:center;
 }
 
-.google-simple-list svg{
-  flex:none;
-  margin-top:3px;
-  color:#4baeff;
+.google-ads-visual-glow{
+  position:absolute;
+  width:520px;
+  height:520px;
+  border-radius:50%;
+  background:radial-gradient(circle,rgba(32,143,245,.18),transparent 68%);
+  filter:blur(5px);
 }
 
-.google-simple-list strong{
-  color:#dce7ef;
-  font-size:15px;
-}
-
-.google-simple-list p{
-  margin:7px 0 0;
-  color:#8293a5;
-  font-size:13px;
-  line-height:1.6;
-}
-
-.google-simple-feature{
-  display:grid;
-  grid-template-columns:1.15fr .85fr;
-  gap:30px;
-  padding:34px;
-  border:1px solid #18334b;
-  border-radius:22px;
-  background:linear-gradient(145deg,#08131f,#050a10);
-}
-
-.google-simple-feature h2{
-  margin:16px 0;
-}
-
-.google-simple-feature p{
-  max-width:760px;
-  color:#8395a8;
-  line-height:1.7;
-}
-
-.google-simple-example{
-  align-self:center;
-}
-
-.google-simple-example>div{
-  padding:15px;
-  margin-bottom:9px;
-  border:1px solid #183148;
-  border-radius:11px;
+.google-ads-browser{
+  position:relative;
+  z-index:2;
+  width:min(100%,500px);
+  border:1px solid #19364f;
+  border-radius:24px;
+  overflow:hidden;
   background:#07111b;
+  box-shadow:
+    0 40px 100px rgba(0,0,0,.45),
+    0 0 60px rgba(21,130,226,.07);
 }
 
-.google-simple-example span{
+.google-ads-browser-top{
+  display:flex;
+  gap:7px;
+  padding:13px 15px;
+  border-bottom:1px solid #142a3d;
+  background:#091520;
+}
+
+.google-ads-browser-top span{
+  width:8px;
+  height:8px;
+  border-radius:50%;
+  background:#30485f;
+}
+
+.google-ads-browser-content{
+  padding:22px;
+}
+
+.google-ads-brand-row{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:10px;
+  margin-bottom:17px;
+}
+
+.google-ads-brand-row span{
+  color:#6f8397;
+  font-size:10px;
+  font-weight:700;
+  letter-spacing:.04em;
+}
+
+.google-ads-logo{
+  width:92px;
+  height:auto;
   display:block;
-  margin-bottom:6px;
-  color:#54b5ff;
+}
+
+.google-ads-search{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  padding:13px 15px;
+  border:1px solid #243e57;
+  border-radius:999px;
+  color:#a6bacb;
+  background:#06101a;
+}
+
+.google-ads-result{
+  margin-top:14px;
+  padding:19px;
+  border:1px solid #1a3851;
+  border-radius:17px;
+  background:#07131f;
+}
+
+.google-ads-result.secondary{
+  opacity:.7;
+}
+
+.google-ads-sponsored{
+  display:inline-block;
+  padding:3px 6px;
+  border:1px solid #335b77;
+  border-radius:5px;
+  color:#79c5ff;
+  font-size:8px;
+  font-weight:800;
+  text-transform:uppercase;
+}
+
+.google-ads-result-url{
+  margin-top:9px;
+  color:#6e8498;
+  font-size:11px;
+}
+
+.google-ads-result h3{
+  margin:7px 0 7px;
+  color:#75c5ff;
+  font-size:19px;
+  line-height:1.25;
+}
+
+.google-ads-result p{
+  margin:0;
+  color:#92a2b1;
+  font-size:13px;
+  line-height:1.55;
+}
+
+.google-ads-result-link{
+  display:flex;
+  align-items:center;
+  gap:6px;
+  margin-top:12px;
+  color:#c8d8e5;
+  font-size:11px;
+  font-weight:700;
+}
+
+.google-ads-floating-card{
+  position:absolute;
+  z-index:3;
+  display:flex;
+  align-items:center;
+  gap:10px;
+  padding:12px 14px;
+  border:1px solid #1c3d59;
+  border-radius:13px;
+  background:rgba(6,15,24,.94);
+  box-shadow:0 20px 50px rgba(0,0,0,.3);
+  backdrop-filter:blur(15px);
+}
+
+.google-ads-floating-card svg{
+  color:#59baff;
+}
+
+.google-ads-floating-card small,
+.google-ads-floating-card strong{
+  display:block;
+}
+
+.google-ads-floating-card small{
+  color:#60778d;
   font-size:8px;
   letter-spacing:.12em;
   font-weight:900;
 }
 
-.google-simple-example strong{
-  color:#bac9d5;
-  font-size:13px;
+.google-ads-floating-card strong{
+  margin-top:3px;
+  color:#d6e4ee;
+  font-size:11px;
 }
 
-.google-simple-example .muted span{
-  color:#72879b;
+.google-ads-call-card{
+  right:-4px;
+  bottom:75px;
 }
 
-.google-simple-example .muted strong{
-  color:#77899a;
+.google-ads-search-card{
+  left:-14px;
+  top:100px;
 }
 
-.google-simple-process{
+.google-ads-section{
+  position:relative;
+}
+
+.google-ads-intro-layout{
   display:grid;
-  gap:0;
-  border-top:1px solid rgba(255,255,255,.06);
+  grid-template-columns:1.05fr .95fr;
+  gap:30px;
+  align-items:start;
 }
 
-.google-simple-process>div{
-  display:grid;
-  grid-template-columns:75px 1fr;
-  gap:20px;
-  padding:22px 0;
-  border-bottom:1px solid rgba(255,255,255,.06);
+.google-ads-intro-copy{
+  max-width:800px;
 }
 
-.google-simple-process>div>span{
-  color:#53b4ff;
-  font-size:12px;
-  font-weight:900;
+.google-ads-intro-copy p{
+  color:#8c9daa;
+  font-size:17px;
+  line-height:1.75;
+  margin:0 0 18px;
 }
 
-.google-simple-process h3{
-  margin:0 0 6px;
-  font-size:19px;
-}
-
-.google-simple-process p{
-  margin:0;
-  color:#8293a5;
-  line-height:1.6;
-  font-size:13px;
-}
-
-.google-simple-faq{
+.google-ads-objectives{
   display:grid;
   gap:10px;
 }
 
-.google-simple-faq details{
-  padding:19px 21px;
-  border:1px solid #172d42;
-  border-radius:15px;
-  background:#07111b;
+.google-ads-objectives>div{
+  display:grid;
+  grid-template-columns:45px 1fr;
+  gap:5px 13px;
+  padding:18px;
+  border:1px solid #172f44;
+  border-radius:16px;
+  background:linear-gradient(145deg,#09131f,#050a10);
 }
 
-.google-simple-faq summary{
-  list-style:none;
-  cursor:pointer;
+.google-ads-objectives span{
+  grid-row:1 / span 2;
+  color:#4bb1ff;
+  font-size:11px;
+  font-weight:900;
+}
+
+.google-ads-objectives strong{
   color:#dce7ef;
-  font-size:15px;
-  font-weight:700;
-}
-
-.google-simple-faq summary::-webkit-details-marker{
-  display:none;
-}
-
-.google-simple-faq summary:after{
-  content:"+";
-  float:right;
-  color:#4db2ff;
   font-size:18px;
 }
 
-.google-simple-faq details[open] summary:after{
-  content:"−";
+.google-ads-objectives p{
+  margin:0;
+  color:#8192a2;
+  font-size:13px;
+  line-height:1.5;
 }
 
-.google-simple-faq p{
-  margin:12px 0 0;
-  color:#8293a5;
+.google-ads-service-grid{
+  grid-template-columns:repeat(2,1fr);
+}
+
+.google-ads-service-grid .service-card{
+  min-height:250px;
+}
+
+.google-ads-service-grid .service-card h3{
+  font-size:24px;
+}
+
+.google-ads-service-grid .service-card p{
+  font-size:15px;
+  line-height:1.7;
+}
+
+.google-ads-services-list{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  column-gap:45px;
+  border-top:1px solid rgba(255,255,255,.06);
+}
+
+.google-ads-services-list>div{
+  display:flex;
+  align-items:flex-start;
+  gap:13px;
+  padding:25px 0;
+  border-bottom:1px solid rgba(255,255,255,.06);
+}
+
+.google-ads-services-list>div>svg{
+  flex:none;
+  margin-top:4px;
+  color:#4bb2ff;
+}
+
+.google-ads-services-list h3{
+  margin:0 0 7px;
+  font-size:19px;
+}
+
+.google-ads-services-list p{
+  margin:0;
+  color:#8394a4;
+  font-size:14px;
   line-height:1.65;
+}
+
+.google-ads-feature{
+  display:grid;
+  grid-template-columns:1.1fr .9fr;
+  gap:35px;
+  padding:34px;
+  border:1px solid #18334b;
+  border-radius:23px;
+  background:
+    radial-gradient(circle at 100% 0,rgba(33,142,240,.12),transparent 38%),
+    linear-gradient(145deg,#08131f,#050a10);
+}
+
+.google-ads-feature h2{
+  margin:15px 0;
+}
+
+.google-ads-feature>div>p{
+  color:#8798a9;
+  font-size:16px;
+  line-height:1.7;
+}
+
+.google-ads-feature-points{
+  display:flex;
+  flex-wrap:wrap;
+  gap:10px 18px;
+  margin-top:25px;
+}
+
+.google-ads-feature-points span{
+  display:flex;
+  align-items:center;
+  gap:7px;
+  color:#aebfcb;
   font-size:13px;
 }
 
-.google-simple-cta{
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  gap:30px;
-  padding:30px 34px;
-  border:1px solid #1b405d;
-  border-radius:20px;
+.google-ads-feature-points svg{
+  color:#4bb2ff;
+}
+
+.google-ads-search-examples{
+  align-self:center;
+}
+
+.google-ads-search-examples>div{
+  padding:17px;
+  margin-bottom:10px;
+  border:1px solid #183148;
+  border-radius:13px;
   background:#07111b;
 }
 
-.google-simple-cta h2{
-  max-width:780px;
-  margin:14px 0 8px;
+.google-ads-search-examples small,
+.google-ads-search-examples strong{
+  display:block;
 }
 
-.google-simple-cta p{
+.google-ads-search-examples small{
+  color:#5ab9ff;
+  font-size:8px;
+  font-weight:900;
+  letter-spacing:.12em;
+}
+
+.google-ads-search-examples strong{
+  margin-top:7px;
+  color:#c8d7e1;
+  font-size:14px;
+}
+
+.google-ads-search-examples .negative small{
+  color:#71869a;
+}
+
+.google-ads-search-examples .negative strong{
+  color:#758898;
+}
+
+.google-ads-triangle{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:14px;
+}
+
+.google-ads-triangle>div{
+  padding:28px;
+  border:1px solid #162e43;
+  border-radius:19px;
+  background:linear-gradient(145deg,#09131f,#050a10);
+}
+
+.google-ads-triangle span{
+  color:#4bb1ff;
+  font-size:10px;
+  font-weight:900;
+}
+
+.google-ads-triangle h3{
+  margin:24px 0 8px;
+  font-size:23px;
+}
+
+.google-ads-triangle p{
   margin:0;
-  color:#8295a8;
+  color:#8193a4;
+  font-size:14px;
+  line-height:1.65;
+}
+
+.google-ads-tech-row{
+  display:flex;
+  flex-wrap:wrap;
+  gap:9px;
+  margin-top:16px;
+}
+
+.google-ads-tech-row span{
+  padding:8px 10px;
+  border:1px solid #18334c;
+  border-radius:9px;
+  color:#748ba0;
+  font-size:11px;
+}
+
+.google-ads-process{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  border-top:1px solid rgba(255,255,255,.06);
+}
+
+.google-ads-process>div{
+  padding:25px 22px;
+  border-right:1px solid rgba(255,255,255,.06);
+}
+
+.google-ads-process>div:last-child{
+  border-right:0;
+}
+
+.google-ads-process span{
+  color:#4db2ff;
+  font-size:11px;
+  font-weight:900;
+}
+
+.google-ads-process h3{
+  margin:21px 0 8px;
+  font-size:21px;
+}
+
+.google-ads-process p{
+  margin:0;
+  color:#8193a5;
+  font-size:13px;
+  line-height:1.6;
+}
+
+.google-ads-business-grid{
+  grid-template-columns:repeat(3,1fr);
+}
+
+.google-ads-faq{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:11px;
+}
+
+.google-ads-faq details{
+  padding:20px;
+  border:1px solid #172e43;
+  border-radius:16px;
+  background:#07111b;
+}
+
+.google-ads-faq summary{
+  cursor:pointer;
+  list-style:none;
+  color:#dbe7ef;
+  font-size:16px;
+  font-weight:700;
+  line-height:1.4;
+}
+
+.google-ads-faq summary::-webkit-details-marker{
+  display:none;
+}
+
+.google-ads-faq summary:after{
+  content:"+";
+  float:right;
+  color:#54b7ff;
+  font-size:20px;
+  font-weight:400;
+}
+
+.google-ads-faq details[open] summary:after{
+  content:"−";
+}
+
+.google-ads-faq p{
+  margin:12px 0 0;
+  color:#8395a6;
+  font-size:14px;
+  line-height:1.65;
 }
 
 .company-details{
@@ -1676,7 +1977,7 @@ main{min-height:100dvh;background-color:#02050a}
 
 .company-details-grid dt{
   color:#627a91;
-  font-size:9px;
+  font-size:10px;
   font-weight:800;
   text-transform:uppercase;
   letter-spacing:.08em;
@@ -1685,49 +1986,113 @@ main{min-height:100dvh;background-color:#02050a}
 .company-details-grid dd{
   margin:7px 0 0;
   color:#c6d6e2;
-  font-size:13px;
+  font-size:14px;
   font-weight:750;
 }
 
-@media(max-width:800px){
+@media(max-width:1000px){
 
-  .google-simple-hero{
-    padding:110px 18px 55px;
+  .google-ads-hero-inner{
+    grid-template-columns:1fr;
+    padding-top:125px;
   }
 
-  .google-simple-hero h1{
-    font-size:clamp(40px,11vw,54px);
+  .google-ads-hero-copy{
+    max-width:800px;
   }
 
-  .google-simple-lead{
-    font-size:15px;
+  .google-ads-hero-visual{
+    min-height:520px;
   }
 
-  .google-simple-actions{
-    flex-direction:column;
-  }
-
-  .google-simple-actions .primary,
-  .google-simple-actions .secondary{
-    width:100%;
-    justify-content:center;
-  }
-
-  .google-simple-columns,
-  .google-simple-columns-3,
-  .google-simple-list,
-  .google-simple-feature{
+  .google-ads-intro-layout,
+  .google-ads-feature{
     grid-template-columns:1fr;
   }
 
-  .google-simple-feature{
-    padding:24px 20px;
+  .google-ads-process{
+    grid-template-columns:1fr 1fr;
   }
 
-  .google-simple-cta{
-    flex-direction:column;
-    align-items:flex-start;
-    padding:24px 20px;
+  .google-ads-process>div:nth-child(2){
+    border-right:0;
+  }
+
+  .google-ads-process>div:nth-child(-n+2){
+    border-bottom:1px solid rgba(255,255,255,.06);
+  }
+
+  .google-ads-business-grid{
+    grid-template-columns:1fr;
+  }
+}
+
+@media(max-width:700px){
+
+  .google-ads-hero-inner{
+    padding:105px 18px 55px;
+  }
+
+  .google-ads-hero h1{
+    font-size:clamp(41px,11.6vw,57px);
+  }
+
+  .google-ads-hero-copy>p{
+    font-size:15px;
+  }
+
+  .google-ads-hero-visual{
+    min-height:430px;
+  }
+
+  .google-ads-browser{
+    width:100%;
+  }
+
+  .google-ads-browser-content{
+    padding:17px;
+  }
+
+  .google-ads-call-card{
+    right:-2px;
+    bottom:35px;
+  }
+
+  .google-ads-search-card{
+    left:-2px;
+    top:35px;
+  }
+
+  .google-ads-service-grid,
+  .google-ads-services-list,
+  .google-ads-triangle,
+  .google-ads-faq{
+    grid-template-columns:1fr;
+  }
+
+  .google-ads-feature{
+    padding:25px 20px;
+  }
+
+  .google-ads-process{
+    grid-template-columns:1fr;
+  }
+
+  .google-ads-process>div{
+    border-right:0;
+    border-bottom:1px solid rgba(255,255,255,.06);
+  }
+
+  .google-ads-process>div:last-child{
+    border-bottom:0;
+  }
+
+  .google-ads-tech-row{
+    gap:7px;
+  }
+
+  .google-ads-tech-row span{
+    font-size:10px;
   }
 
   .company-details-grid{
