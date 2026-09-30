@@ -6,14 +6,81 @@ import SiteHeader from '@/components/SiteHeader';
 import HashScrollHandler from '@/components/HashScrollHandler';
 import PolicyLink from '@/components/PolicyLink';
 
-const phoneHref='tel:+40740231358';
-const services=[
-{icon:Target,title:'Google Ads',text:'Campanii pentru utilizatori care caută activ serviciile sau produsele tale și sunt aproape de decizia de cumpărare.',points:['Search, Performance Max, Display și YouTube','Structură de cuvinte cheie, anunțuri și extensii','Optimizare bugete, licitații și conversii','Tracking pentru apeluri, formulare și vânzări']},
-{icon:Megaphone,title:'Meta Ads · Facebook & Instagram',text:'Campanii vizuale și de lead generation pe Facebook și Instagram, construite pentru audiența potrivită și pentru remarketing.',points:['Lead Ads, trafic, vânzări și remarketing','Audiențe personalizate și Lookalike','Testare de creative, texte și plasamente','Meta Pixel și măsurarea conversiilor']},
-{icon:Sparkles,title:'TikTok Ads',text:'Promovare video pentru servicii și magazine care vor să ajungă la utilizatori prin conținut dinamic și campanii orientate spre acțiune.',points:['Campanii de trafic, lead-uri și conversii','Targetare, audiențe și optimizare','TikTok Pixel și evenimente','Integrare cu landing page sau magazin']},
-{icon:Code2,title:'Website-uri & Landing Pages',text:'Construim sau optimizăm pagina pe care ajunge clientul, astfel încât reclama să continue într-o experiență clară și convingătoare.',points:['Site-uri responsive, rapide și moderne','Landing pages dedicate campaniilor','CTA-uri de apel și formulare eficiente','SEO tehnic și structură orientată spre conversie']},
-{icon:ShoppingCart,title:'Magazine online',text:'Magazine online pregătite pentru promovare, tracking și vânzare, de la căutarea produsului până la comandă.',points:['Catalog, produse, coș și checkout','Tracking achiziții și valoarea comenzilor','Google Shopping / Performance Max','Integrare Meta și TikTok pentru remarketing']},
-{icon:Wrench,title:'Tracking, mentenanță & automatizări',text:'Legăm toate componentele tehnice astfel încât să vezi sursa rezultatelor și să nu pierzi solicitările venite din campanii.',points:['GA4, GTM, Google Ads, Meta Pixel, TikTok Pixel','Conversii pentru apeluri, formulare și vânzări','Mentenanță, actualizări și securitate','Automatizări pentru lead-uri, email și fluxuri interne']},
+const phoneHref = 'tel:+40740231358';
+
+const services = [
+  {
+    icon: Target,
+    title: 'Google Ads',
+    href: '/google-ads/',
+    text: 'Campanii pentru utilizatori care caută activ serviciile sau produsele tale și sunt aproape de decizia de cumpărare.',
+    points: [
+      'Search, Performance Max, Display și YouTube',
+      'Structură de cuvinte cheie, anunțuri și extensii',
+      'Optimizare bugete, licitații și conversii',
+      'Tracking pentru apeluri, formulare și vânzări',
+    ],
+  },
+  {
+    icon: Megaphone,
+    title: 'Meta Ads · Facebook & Instagram',
+    href: '/facebook-instagram-ads/',
+    text: 'Campanii vizuale și de lead generation pe Facebook și Instagram, construite pentru audiența potrivită și pentru remarketing.',
+    points: [
+      'Lead Ads, trafic, vânzări și remarketing',
+      'Audiențe personalizate și Lookalike',
+      'Testare de creative, texte și plasamente',
+      'Meta Pixel și măsurarea conversiilor',
+    ],
+  },
+  {
+    icon: Sparkles,
+    title: 'TikTok Ads',
+    href: '/tiktok-ads/',
+    text: 'Promovare video pentru servicii și magazine care vor să ajungă la utilizatori prin conținut dinamic și campanii orientate spre acțiune.',
+    points: [
+      'Campanii de trafic, lead-uri și conversii',
+      'Targetare, audiențe și optimizare',
+      'TikTok Pixel și evenimente',
+      'Integrare cu landing page sau magazin',
+    ],
+  },
+  {
+    icon: Code2,
+    title: 'Website-uri & Landing Pages',
+    href: '/creare-site/',
+    text: 'Construim sau optimizăm pagina pe care ajunge clientul, astfel încât reclama să continue într-o experiență clară și convingătoare.',
+    points: [
+      'Site-uri responsive, rapide și moderne',
+      'Landing pages dedicate campaniilor',
+      'CTA-uri de apel și formulare eficiente',
+      'SEO tehnic și structură orientată spre conversie',
+    ],
+  },
+  {
+    icon: ShoppingCart,
+    title: 'Magazine online',
+    href: '/magazin-online/',
+    text: 'Magazine online pregătite pentru promovare, tracking și vânzare, de la căutarea produsului până la comandă.',
+    points: [
+      'Catalog, produse, coș și checkout',
+      'Tracking achiziții și valoarea comenzilor',
+      'Google Shopping / Performance Max',
+      'Integrare Meta și TikTok pentru remarketing',
+    ],
+  },
+  {
+    icon: Wrench,
+    title: 'Tracking, mentenanță & automatizări',
+    href: '/tracking-conversii/',
+    text: 'Legăm toate componentele tehnice astfel încât să vezi sursa rezultatelor și să nu pierzi solicitările venite din campanii.',
+    points: [
+      'GA4, GTM, Google Ads, Meta Pixel, TikTok Pixel',
+      'Conversii pentru apeluri, formulare și vânzări',
+      'Mentenanță, actualizări și securitate',
+      'Automatizări pentru lead-uri, email și fluxuri interne',
+    ],
+  },
 ];
 const plans=[
 {name:'START',price:'200 RON',cadence:'/ săptămână',subtitle:'Pentru afaceri la început de drum',features:['Administrare Google Ads / Facebook Ads','Setare structură campanie','Optimizare săptămânală','Raport lunar performanță']},
