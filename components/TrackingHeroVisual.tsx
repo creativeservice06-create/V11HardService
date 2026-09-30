@@ -1,9 +1,9 @@
 import {
+  ArrowDown,
   BarChart3,
   Check,
   Code2,
   MousePointerClick,
-  Target,
 } from 'lucide-react';
 
 export default function TrackingHeroVisual() {
@@ -11,97 +11,80 @@ export default function TrackingHeroVisual() {
     <div className="tracking-hero-visual" aria-hidden="true">
       <div className="tracking-visual-glow" />
 
-      <div className="tracking-browser">
-        <div className="tracking-browser-top">
-          <span />
-          <span />
-          <span />
-          <div className="tracking-browser-url">siteul-tau.ro</div>
+      <div className="tracking-main-card">
+        <div className="tracking-card-top">
+          <div className="tracking-dots">
+            <span />
+            <span />
+            <span />
+          </div>
+
+          <div className="tracking-url">analytics / tracking</div>
         </div>
 
-        <div className="tracking-screen">
-          <div className="tracking-screen-header">
+        <div className="tracking-card-body">
+          <div className="tracking-card-heading">
             <div>
-              <small>CONVERSII</small>
-              <strong>Tracking activ</strong>
+              <small>TRACKING CONVERSII</small>
+              <h3>Măsurare corectă</h3>
             </div>
 
-            <div className="tracking-status">
+            <div className="tracking-live">
               <span />
-              Live
+              Activ
             </div>
           </div>
 
-          <div className="tracking-chart-area">
-            <div className="tracking-chart-label">
-              <span>Acțiuni măsurate</span>
-              <strong>Lead-uri și evenimente</strong>
+          <div className="tracking-flow-visual">
+            <div className="tracking-flow-box">
+              <MousePointerClick size={18} />
+              <strong>Acțiune</strong>
+              <span>Formular / Click</span>
             </div>
 
-            <div className="tracking-chart">
-              <div className="tracking-chart-line line-1" />
-              <div className="tracking-chart-line line-2" />
-              <div className="tracking-chart-line line-3" />
-              <div className="tracking-chart-line line-4" />
+            <ArrowDown size={18} className="tracking-arrow" />
 
-              <div className="tracking-chart-path">
-                <span />
-                <span />
-                <span />
-                <span />
-                <span />
-              </div>
+            <div className="tracking-flow-box">
+              <Code2 size={18} />
+              <strong>GTM</strong>
+              <span>Eveniment</span>
+            </div>
+
+            <ArrowDown size={18} className="tracking-arrow" />
+
+            <div className="tracking-flow-box tracking-flow-main">
+              <BarChart3 size={18} />
+              <strong>GA4</strong>
+              <span>Conversie</span>
             </div>
           </div>
 
-          <div className="tracking-events">
-            <div className="tracking-event-item">
-              <div className="tracking-event-icon">
-                <MousePointerClick size={15} />
-              </div>
-              <div>
-                <strong>generate_lead</strong>
-                <span>Formular trimis</span>
-              </div>
-              <Check size={16} />
-            </div>
-
-            <div className="tracking-event-item">
-              <div className="tracking-event-icon">
-                <Target size={15} />
-              </div>
-              <div>
-                <strong>phone_call</strong>
-                <span>Click pe telefon</span>
-              </div>
-              <Check size={16} />
-            </div>
+          <div className="tracking-check-row">
+            <Check size={15} />
+            <span>Eveniment configurat și verificat</span>
           </div>
         </div>
       </div>
 
-      <div className="tracking-stack-card">
-        <div className="tracking-stack-icon">
-          <BarChart3 size={18} />
+      <div className="tracking-floating-card tracking-floating-left">
+        <div className="tracking-floating-icon">
+          <BarChart3 size={17} />
         </div>
 
         <div>
           <strong>GA4 + GTM</strong>
-          <span>Măsurare centralizată</span>
+          <span>Tracking centralizat</span>
         </div>
       </div>
 
-      <div className="tracking-code-card">
-        <div className="tracking-code-top">
-          <Code2 size={15} />
-          <span>EVENT</span>
+      <div className="tracking-floating-card tracking-floating-right">
+        <div className="tracking-code-symbol">
+          &lt;/&gt;
         </div>
 
-        <code>generate_lead</code>
-
-        <div className="tracking-code-check">
-          <Check size={13} />
-          Verificat
+        <div>
+          <strong>Conversii</strong>
+          <span>Lead · apel · vânzare</span>
         </div>
       </div>
     </div>
