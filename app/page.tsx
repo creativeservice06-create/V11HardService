@@ -5,6 +5,16 @@ import ContactForm from '@/components/ContactForm';
 import SiteHeader from '@/components/SiteHeader';
 import HashScrollHandler from '@/components/HashScrollHandler';
 import PolicyLink from '@/components/PolicyLink';
+import {
+  ArrowRight,
+  Check,
+  Code2,
+  Megaphone,
+  ShoppingCart,
+  Sparkles,
+  Target,
+  Wrench,
+} from 'lucide-react';
 
 const phoneHref = 'tel:+40740231358';
 
