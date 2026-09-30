@@ -1,8 +1,9 @@
-
+import type { Metadata } from 'next';
 import {
   ArrowRight,
   BarChart3,
   Check,
+  Layers3,
   MousePointerClick,
   Phone,
   Search,
@@ -12,71 +13,77 @@ import {
   TrendingUp,
 } from 'lucide-react';
 
-import SiteHeader from '@/components/SiteHeader';
 import ContactForm from '@/components/ContactForm';
+import PolicyLink from '@/components/PolicyLink';
+import SiteHeader from '@/components/SiteHeader';
 
+const siteUrl = 'https://www.hardservicesrl.ro';
 const phoneHref = 'tel:+40740231358';
 
-export const metadata = {
+export const metadata: Metadata = {
   title: 'Google Ads pentru Firme | Administrare și Optimizare Campanii',
   description:
-    'Servicii Google Ads pentru firme: administrare, campanii Search, Performance Max, Shopping, cercetare cuvinte cheie, optimizare, landing pages și tracking al conversiilor.',
+    'Administrare Google Ads pentru firme: Search, Performance Max, Shopping, cuvinte cheie, optimizare, tracking conversii și landing pages.',
   alternates: {
     canonical: '/google-ads/',
   },
   openGraph: {
     type: 'website',
     locale: 'ro_RO',
-    url: 'https://www.hardservicesrl.ro/google-ads/',
+    url: `${siteUrl}/google-ads/`,
     siteName: 'Hard Service Marketing',
     title: 'Google Ads pentru Firme | Administrare și Optimizare Campanii',
     description:
-      'Administrare Google Ads pentru lead-uri și vânzări. Search, Performance Max, Shopping, optimizare și tracking al conversiilor.',
+      'Campanii Google Ads pentru servicii, B2B și magazine online, cu structură, optimizare, landing pages și tracking al conversiilor.',
   },
 };
 
-const serviceCards = [
+const campaignTypes = [
   {
     icon: Search,
+    label: 'SEARCH',
     title: 'Google Search',
     text:
-      'Campanii pentru persoanele care caută deja serviciile sau produsele oferite de afacerea ta.',
+      'Campanii pentru oameni care caută deja produse sau servicii relevante și sunt aproape de o acțiune.',
     points: [
-      'Cuvinte cheie și grupuri de anunțuri',
-      'Potrivire între căutare, anunț și landing page',
-      'Optimizarea termenilor de căutare',
-      'Cuvinte cheie negative',
+      'Cuvinte cheie și structură pe servicii',
+      'Anunțuri și assets relevante',
+      'Analiză search terms',
+      'Negative keywords',
     ],
   },
   {
     icon: TrendingUp,
+    label: 'AUTOMATIZARE',
     title: 'Performance Max',
     text:
-      'Campanii orientate spre obiective de conversie și distribuție în ecosistemul Google, atunci când modelul de business și datele contului justifică utilizarea lor.',
+      'Campanii orientate spre conversii și distribuție în ecosistemul Google, atunci când obiectivele și datele contului justifică această abordare.',
     points: [
-      'Configurarea obiectivelor de conversie',
+      'Obiective de conversie',
       'Asset-uri și grupuri de asset-uri',
-      'Semnale și structură de campanie',
+      'Semnale și structură',
       'Monitorizare și optimizare',
     ],
   },
   {
     icon: ShoppingCart,
+    label: 'E-COMMERCE',
     title: 'Google Shopping',
     text:
       'Pentru magazine online care vor să promoveze produse și să urmărească traseul până la achiziție.',
     points: [
-      'Merchant Center',
+      'Google Merchant Center',
       'Feed de produse',
-      'Shopping și Performance Max',
-      'Tracking pentru achiziții și valoarea comenzilor',
+      'Shopping / Performance Max',
+      'Tracking pentru achiziții',
     ],
   },
   {
     icon: Target,
+    label: 'REMARKETING',
     title: 'Display & YouTube',
     text:
-      'Campanii complementare pentru vizibilitate, remarketing și acoperirea unor segmente suplimentare.',
+      'Campanii complementare pentru vizibilitate, remarketing și acoperirea unor audiențe suplimentare.',
     points: [
       'Audiențe și remarketing',
       'Asset-uri vizuale',
@@ -86,161 +93,219 @@ const serviceCards = [
   },
 ];
 
+const optimizationItems = [
+  {
+    icon: Search,
+    title: 'Cuvinte cheie',
+    text:
+      'Identificăm temele de căutare relevante și separăm intenția comercială de traficul care nu merită buget.',
+  },
+  {
+    icon: MousePointerClick,
+    title: 'Anunțuri',
+    text:
+      'Mesajul anunțului trebuie să continue natural ceea ce a căutat utilizatorul și să ducă spre o acțiune clară.',
+  },
+  {
+    icon: Settings2,
+    title: 'Structură',
+    text:
+      'Separăm campaniile și serviciile astfel încât datele și bugetele să poată fi analizate corect.',
+  },
+  {
+    icon: BarChart3,
+    title: 'Costuri & conversii',
+    text:
+      'Urmărim costurile, conversiile și eficiența, nu doar numărul de clickuri sau afișări.',
+  },
+  {
+    icon: Layers3,
+    title: 'Tracking',
+    text:
+      'Conectăm Google Ads cu website-ul, GA4 și Google Tag Manager atunci când proiectul are nevoie de aceste integrări.',
+  },
+  {
+    icon: Target,
+    title: 'Alocarea bugetului',
+    text:
+      'Prioritățile pot fi ajustate după datele reale din campanii și după valoarea acțiunilor generate.',
+  },
+];
+
 const processSteps = [
   {
     number: '01',
     title: 'Analizăm afacerea',
     text:
-      'Începem cu serviciile, produsele, zona de activitate, marjele, clienții și obiectivele comerciale.',
+      'Servicii, produse, zone de acoperire, clienți, obiective și traseul până la contact sau vânzare.',
   },
   {
     number: '02',
     title: 'Cercetăm căutările',
     text:
-      'Identificăm temele de căutare relevante și separăm intențiile care merită buget de cele care pot aduce trafic inutil.',
+      'Identificăm termenii relevanți și stabilim structura potrivită pentru campanii și grupuri de anunțuri.',
   },
   {
     number: '03',
     title: 'Construim campaniile',
     text:
-      'Structurăm campaniile, grupurile, anunțurile, asset-urile și paginile de destinație în funcție de obiective.',
+      'Setăm campaniile, anunțurile, asset-urile, extensiile și legătura cu paginile de destinație.',
   },
   {
     number: '04',
-    title: 'Configurăm conversiile',
+    title: 'Măsurăm conversiile',
     text:
-      'Măsurăm apeluri, formulare, vânzări și alte acțiuni importante pentru afacerea ta.',
+      'Configurăm măsurarea pentru apeluri, formulare, achiziții și alte acțiuni comerciale importante.',
   },
   {
     number: '05',
     title: 'Optimizăm continuu',
     text:
-      'Analizăm termenii de căutare, costurile, conversiile și comportamentul traficului și ajustăm campaniile.',
+      'Analizăm datele, termenii de căutare, costurile și conversiile și ajustăm ceea ce nu funcționează suficient de bine.',
   },
 ];
 
-const faq = [
+const faqItems = [
   {
-    q: 'Cât costă administrarea Google Ads?',
-    a: 'Costul administrării depinde de structură, numărul de campanii, obiective și volumul de lucru. Pentru fiecare proiect stabilim separat structura de lucru și oferta.',
+    question: 'Ce înseamnă administrare Google Ads?',
+    answer:
+      'Administrarea Google Ads înseamnă mai mult decât lansarea unei campanii. Include analiza obiectivelor, structurarea contului, cuvinte cheie, anunțuri, negative keywords, monitorizare, optimizare și măsurarea conversiilor.',
   },
   {
-    q: 'Google Ads aduce rezultate imediat?',
-    a: 'Campaniile pot începe să genereze trafic după lansare, dar performanța se evaluează pe baza datelor acumulate, a conversiilor și a optimizării continue. Nu există o garanție universală de rezultate.',
+    question: 'Google Ads este potrivit pentru orice firmă?',
+    answer:
+      'Nu există o structură identică pentru toate afacerile. Google Ads poate fi util pentru servicii locale, firme B2B și magazine online, însă tipul campaniei și strategia trebuie adaptate produsului, pieței și obiectivului comercial.',
   },
   {
-    q: 'Aveți nevoie de un website?',
-    a: 'În majoritatea campaniilor este important ca utilizatorul să ajungă într-o pagină relevantă pentru ceea ce a căutat. Putem construi sau optimiza website-ul și landing page-ul atunci când este necesar.',
+    question: 'Cât costă administrarea Google Ads?',
+    answer:
+      'Costul administrării depinde de obiective, numărul de campanii, complexitatea contului și volumul de lucru. Oferta se stabilește în funcție de proiect și este separată de bugetul plătit către Google pentru difuzarea reclamelor.',
   },
   {
-    q: 'Măsurați apelurile telefonice?',
-    a: 'Da. Putem implementa tracking pentru apelurile inițiate de pe website și pentru alte acțiuni importante, în funcție de configurația contului și a site-ului.',
+    question: 'Aveți nevoie de un website sau landing page?',
+    answer:
+      'În majoritatea proiectelor, pagina în care ajunge utilizatorul este o parte importantă a campaniei. Putem utiliza pagina existentă sau putem construi ori optimiza o landing page dedicată.',
   },
   {
-    q: 'Lucrați și cu magazine online?',
-    a: 'Da. Pentru magazinele online putem lucra cu Shopping, Performance Max, Merchant Center și tracking pentru produse, checkout, achiziții și valoarea comenzilor.',
+    question: 'Puteți urmări apelurile și formularele?',
+    answer:
+      'Da. Pentru proiectele în care configurația tehnică permite, putem implementa tracking pentru apeluri, formulare și alte conversii importante și le putem conecta cu Google Ads, GA4 și Google Tag Manager.',
   },
   {
-    q: 'Puteți administra un cont Google Ads existent?',
-    a: 'Da. Putem analiza structura actuală, termenii de căutare, conversiile, bugetele și setările existente și apoi propune modificările necesare.',
+    question: 'Puteți prelua un cont Google Ads existent?',
+    answer:
+      'Da. Putem analiza structura actuală, campaniile, termenii de căutare, conversiile și setările existente și putem propune o reorganizare sau optimizare acolo unde este necesar.',
   },
 ];
 
-const serviceSchema = {
+const structuredData = {
   '@context': 'https://schema.org',
-  '@type': 'Service',
-  '@id': 'https://www.hardservicesrl.ro/google-ads/#service',
-  name: 'Administrare Google Ads',
-  serviceType: 'Google Ads management',
-  url: 'https://www.hardservicesrl.ro/google-ads/',
-  description:
-    'Servicii de administrare, optimizare și tracking pentru campanii Google Ads.',
-  provider: {
-    '@id': 'https://www.hardservicesrl.ro/#organization',
-  },
-  areaServed: {
-    '@type': 'Country',
-    name: 'România',
-  },
-  audience: {
-    '@type': 'BusinessAudience',
-    audienceType: 'Firme și afaceri',
-  },
-};
-
-const breadcrumbSchema = {
-  '@context': 'https://schema.org',
-  '@type': 'BreadcrumbList',
-  itemListElement: [
+  '@graph': [
     {
-      '@type': 'ListItem',
-      position: 1,
-      name: 'Acasă',
-      item: 'https://www.hardservicesrl.ro/',
+      '@type': 'WebPage',
+      '@id': `${siteUrl}/google-ads/#webpage`,
+      url: `${siteUrl}/google-ads/`,
+      name: 'Google Ads pentru Firme | Administrare și Optimizare Campanii',
+      description:
+        'Serviciu de administrare și optimizare Google Ads pentru firme.',
+      inLanguage: 'ro-RO',
+      isPartOf: {
+        '@id': `${siteUrl}/#website`,
+      },
+      about: {
+        '@id': `${siteUrl}/google-ads/#service`,
+      },
     },
     {
-      '@type': 'ListItem',
-      position: 2,
-      name: 'Servicii',
-      item: 'https://www.hardservicesrl.ro/#servicii',
+      '@type': 'Service',
+      '@id': `${siteUrl}/google-ads/#service`,
+      name: 'Administrare Google Ads',
+      serviceType: 'Google Ads management',
+      url: `${siteUrl}/google-ads/`,
+      description:
+        'Administrare, optimizare și tracking pentru campanii Google Ads.',
+      provider: {
+        '@id': `${siteUrl}/#organization`,
+      },
+      areaServed: {
+        '@type': 'Country',
+        name: 'România',
+      },
+      audience: {
+        '@type': 'BusinessAudience',
+        audienceType: 'Firme și afaceri',
+      },
     },
     {
-      '@type': 'ListItem',
-      position: 3,
-      name: 'Google Ads',
-      item: 'https://www.hardservicesrl.ro/google-ads/',
+      '@type': 'BreadcrumbList',
+      '@id': `${siteUrl}/google-ads/#breadcrumbs`,
+      itemListElement: [
+        {
+          '@type': 'ListItem',
+          position: 1,
+          name: 'Acasă',
+          item: siteUrl,
+        },
+        {
+          '@type': 'ListItem',
+          position: 2,
+          name: 'Servicii',
+          item: `${siteUrl}/#servicii`,
+        },
+        {
+          '@type': 'ListItem',
+          position: 3,
+          name: 'Google Ads',
+          item: `${siteUrl}/google-ads/`,
+        },
+      ],
     },
   ],
 };
 
 export default function GoogleAdsPage() {
   return (
-    <main className="service-page google-ads-page">
+    <main className="google-ads-page">
       <SiteHeader />
 
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
-          __html: JSON.stringify(serviceSchema),
-        }}
-      />
-
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify(breadcrumbSchema),
+          __html: JSON.stringify(structuredData),
         }}
       />
 
       {/* HERO */}
-      <section className="service-hero">
-        <div className="service-hero-grid" />
+      <section className="google-page-hero" id="top">
+        <div className="google-page-hero-grid" />
+        <div className="google-page-glow" />
 
-        <div className="service-hero-copy">
+        <div className="google-page-copy">
           <div className="eyebrow">
             GOOGLE ADS · SEARCH · PERFORMANCE MAX · SHOPPING
           </div>
 
-          <div className="service-breadcrumb">
+          <nav className="google-breadcrumbs" aria-label="Breadcrumb">
             <a href="/">Acasă</a>
             <span>/</span>
             <a href="/#servicii">Servicii</a>
             <span>/</span>
             <strong>Google Ads</strong>
-          </div>
+          </nav>
 
           <h1>
-            Google Ads pentru firme care vor trafic relevant și conversii
-            măsurabile.
+            Google Ads pentru firme —
+            <span> administrare, optimizare și conversii măsurabile.</span>
           </h1>
 
-          <p className="service-hero-lead">
-            Administrăm campanii Google Ads de la cercetarea căutărilor și
-            structura contului până la anunțuri, landing pages, tracking și
-            optimizare continuă.
+          <p>
+            Construim și administrăm campanii Google Ads în funcție de ceea ce
+            vrei să obții: apeluri, formulare, lead-uri sau vânzări. De la
+            cercetarea cuvintelor cheie și structura campaniilor până la
+            landing page și tracking.
           </p>
 
-          <div className="service-hero-actions">
+          <div className="hero-actions">
             <a className="primary" href={phoneHref}>
               <Phone size={18} />
               0740 231 358
@@ -248,11 +313,11 @@ export default function GoogleAdsPage() {
 
             <a className="secondary" href="#contact">
               Cere o ofertă
-              <ArrowRight size={18} />
+              <ArrowRight size={17} />
             </a>
           </div>
 
-          <div className="service-proof">
+          <div className="hero-proof">
             <span>
               <Check size={14} />
               Search & Performance Max
@@ -270,145 +335,197 @@ export default function GoogleAdsPage() {
           </div>
         </div>
 
-        <div className="google-ads-visual" aria-label="Exemplu vizual Google Ads">
-          <div className="ads-dashboard">
-            <div className="ads-dashboard-top">
-              <div>
-                <small>GOOGLE ADS</small>
-                <strong>Campanie Search</strong>
-              </div>
-
-              <span className="ads-status">ACTIVĂ</span>
+        <div className="google-ads-visual">
+          <div className="google-search-window">
+            <div className="google-window-top">
+              <span />
+              <span />
+              <span />
+              <small>EXEMPLU VIZUAL</small>
             </div>
 
-            <div className="ads-search">
+            <div className="google-search-bar">
               <Search size={16} />
               <span>serviciul tău + oraș</span>
             </div>
 
-            <div className="ads-result">
+            <div className="google-ad-result">
               <small>SPONSORIZAT</small>
-              <strong>
-                Firma ta apare când clientul caută serviciul
-              </strong>
+
+              <h3>
+                Firma ta poate apărea
+                <br />
+                când clientul caută serviciul
+              </h3>
+
               <p>
-                Landing page relevant, mesaj clar și acțiune măsurabilă.
+                Mesaj clar, pagină relevantă și acțiune ușor de realizat.
               </p>
+
+              <div className="google-result-link">
+                hardservicesrl.ro
+              </div>
             </div>
 
-            <div className="ads-metrics">
+            <div className="google-mini-metrics">
               <div>
                 <small>CLICKURI</small>
                 <b>—</b>
               </div>
+
               <div>
                 <small>CONVERSII</small>
                 <b>—</b>
               </div>
+
               <div>
                 <small>COST / CONV.</small>
                 <b>—</b>
               </div>
             </div>
 
-            <p className="ads-note">
-              Exemplu vizual. Valorile reale depind de piață, ofertă,
-              buget, concurență și configurația campaniei.
+            <p className="google-demo-note">
+              Exemplu vizual. Performanța reală depinde de piață, ofertă,
+              concurență, buget și configurația campaniei.
             </p>
           </div>
         </div>
       </section>
 
+      {/* NAVIGARE RAPIDA */}
+      <div className="google-page-nav-wrap">
+        <nav className="google-page-nav" aria-label="Navigare Google Ads">
+          <a href="#campanii">Campanii</a>
+          <a href="#keywords">Cuvinte cheie</a>
+          <a href="#tracking">Tracking</a>
+          <a href="#optimizare">Optimizare</a>
+          <a href="#proces">Cum lucrăm</a>
+          <a href="#faq">Întrebări</a>
+        </nav>
+      </div>
+
       {/* INTRO */}
-      <section className="section service-intro">
+      <section className="section" id="campanii">
         <div className="section-head">
           <div>
-            <div className="eyebrow">CE ESTE GOOGLE ADS</div>
+            <div className="eyebrow">ADMINISTRARE GOOGLE ADS</div>
+
             <h2>
-              Apari în Google atunci când oamenii caută ceea ce vinzi.
+              Campanii construite în jurul intenției de căutare și a
+              obiectivului comercial.
             </h2>
           </div>
 
           <p>
-            Google Ads permite promovarea în rezultatele de căutare și în
-            celelalte canale Google, în funcție de tipul campaniei și de
-            obiectivele setate. Pentru Search, reclamele pot ajunge la
-            utilizatori care caută activ produse sau servicii relevante.
+            Google Ads nu înseamnă doar să cumperi clickuri. Structura
+            campaniei, relevanța anunțului, pagina de destinație și măsurarea
+            conversiilor trebuie să funcționeze împreună.
           </p>
         </div>
 
-        <div className="service-highlight-grid">
+        <div className="google-feature-grid">
           <article>
-            <MousePointerClick />
+            <div className="google-feature-icon">
+              <MousePointerClick />
+            </div>
+
             <h3>Intenție activă</h3>
+
             <p>
-              Nu pornești doar de la interese generale. În Search poți lucra cu
-              oameni care introduc deja căutări legate de produsul sau serviciul
-              tău.
+              În Search lucrăm cu utilizatori care introduc căutări relevante
+              pentru produsele sau serviciile pe care le oferi.
             </p>
           </article>
 
           <article>
-            <Target />
-            <h3>Control pe structură</h3>
+            <div className="google-feature-icon">
+              <Target />
+            </div>
+
+            <h3>Structură clară</h3>
+
             <p>
-              Campaniile pot fi separate pe servicii, categorii, locații,
-              obiective și alte criterii relevante pentru business.
+              Serviciile, categoriile și obiectivele pot fi separate astfel
+              încât datele să fie ușor de interpretat și optimizat.
             </p>
           </article>
 
           <article>
-            <BarChart3 />
+            <div className="google-feature-icon">
+              <BarChart3 />
+            </div>
+
             <h3>Măsurare</h3>
+
             <p>
-              Nu ne uităm doar la trafic. Urmărim acțiunile care contează:
-              apeluri, formulare, vânzări și alte conversii.
+              Urmărim acțiunile importante pentru business: apeluri, formulare,
+              lead-uri, comenzi și alte conversii.
             </p>
           </article>
+        </div>
+
+        <div className="google-callout">
+          <strong>Important:</strong>
+          <span>
+            bugetul plătit către Google pentru difuzarea reclamelor este
+            separat de costul administrării campaniilor.
+          </span>
         </div>
       </section>
 
-      {/* SERVICES */}
+      {/* TIPURI DE CAMPANII */}
       <section className="section">
         <div className="section-head">
           <div>
-            <div className="eyebrow">CE ADMINISTRĂM</div>
-            <h2>Campanii Google Ads construite în funcție de business.</h2>
+            <div className="eyebrow">TIPURI DE CAMPANII</div>
+
+            <h2>
+              Folosim tipul de campanie potrivit pentru produs, serviciu și
+              obiectiv.
+            </h2>
           </div>
 
           <p>
-            Alegem tipul de campanie în funcție de obiectiv, produs, serviciu,
-            date și traseul utilizatorului până la conversie.
+            Nu toate proiectele au nevoie de aceeași combinație. Alegerea se
+            face după modul în care oamenii caută, cumpără și contactează
+            business-ul.
           </p>
         </div>
 
-        <div className="service-grid google-ads-service-grid">
-          {serviceCards.map(({ icon: Icon, title, text, points }) => (
-            <article className="service-card service-card-v3" key={title}>
-              <div className="service-icon">
-                <Icon />
-              </div>
+        <div className="service-grid service-grid-v3">
+          {campaignTypes.map(
+            ({ icon: Icon, label, title, text, points }) => (
+              <article
+                className="service-card service-card-v3 google-campaign-card"
+                key={title}
+              >
+                <div className="service-icon">
+                  <Icon />
+                </div>
 
-              <h3>{title}</h3>
+                <small className="google-card-label">{label}</small>
 
-              <p>{text}</p>
+                <h3>{title}</h3>
 
-              <ul>
-                {points.map((point) => (
-                  <li key={point}>
-                    <Check size={14} />
-                    {point}
-                  </li>
-                ))}
-              </ul>
-            </article>
-          ))}
+                <p>{text}</p>
+
+                <ul>
+                  {points.map((point) => (
+                    <li key={point}>
+                      <Check size={14} />
+                      {point}
+                    </li>
+                  ))}
+                </ul>
+              </article>
+            )
+          )}
         </div>
       </section>
 
       {/* KEYWORDS */}
-      <section className="section service-split-section">
-        <div className="service-split-card">
+      <section className="section" id="keywords">
+        <div className="google-split-panel">
           <div>
             <div className="eyebrow">CERCETARE ȘI STRUCTURĂ</div>
 
@@ -417,208 +534,234 @@ export default function GoogleAdsPage() {
             </h2>
 
             <p>
-              O componentă importantă a administrării Google Ads este analiza
-              intenției din spatele căutărilor. Separăm temele relevante de
-              căutările care pot consuma buget fără să aibă legătură cu
-              obiectivul comercial.
+              Una dintre cele mai importante părți ale administrării Google Ads
+              este să înțelegi ce caută utilizatorii și ce intenție are fiecare
+              căutare. Cuvintele cheie, potrivirile și negative keywords
+              influențează direct relevanța traficului.
             </p>
 
-            <ul className="service-check-list">
-              <li>
+            <div className="google-check-list">
+              <div>
                 <Check size={16} />
-                Cercetare de cuvinte cheie
-              </li>
-              <li>
+                <span>Cercetare de cuvinte cheie</span>
+              </div>
+
+              <div>
                 <Check size={16} />
-                Structură pe servicii și categorii
-              </li>
-              <li>
+                <span>Structură pe servicii și categorii</span>
+              </div>
+
+              <div>
                 <Check size={16} />
-                Negative keywords
-              </li>
-              <li>
+                <span>Negative keywords</span>
+              </div>
+
+              <div>
                 <Check size={16} />
-                Analiză search terms
-              </li>
-            </ul>
+                <span>Analiză search terms</span>
+              </div>
+            </div>
           </div>
 
-          <div className="service-mini-panel">
+          <div className="google-keyword-panel">
             <small>EXEMPLU DE STRUCTURĂ</small>
 
-            <div className="keyword-line">
+            <div>
               <span>serviciu principal</span>
-              <b>Search</b>
+              <b>SEARCH</b>
             </div>
 
-            <div className="keyword-line">
+            <div>
               <span>serviciu + oraș</span>
-              <b>Search</b>
+              <b>SEARCH</b>
             </div>
 
-            <div className="keyword-line muted">
+            <div className="muted">
               <span>gratuit / curs / job</span>
               <b>NEGATIV</b>
             </div>
 
-            <div className="keyword-line muted">
-              <span>informațional irelevant</span>
+            <div className="muted">
+              <span>căutare nerelevantă</span>
               <b>NEGATIV</b>
             </div>
           </div>
-        </div>
-      </section>
-
-      {/* TRACKING */}
-      <section className="section">
-        <div className="section-head">
-          <div>
-            <div className="eyebrow">TRACKING</div>
-            <h2>
-              Google Ads este mai util atunci când știi ce produce.
-            </h2>
-          </div>
-
-          <p>
-            Legăm campaniile de website și de măsurarea conversiilor, astfel
-            încât optimizarea să se bazeze pe acțiuni reale, nu doar pe
-            afișări și clickuri.
-          </p>
-        </div>
-
-        <div className="tracking-grid">
-          <article>
-            <span>01</span>
-            <h3>Apeluri</h3>
-            <p>
-              Măsurăm acțiunile de contact relevante pentru campaniile care
-              generează telefonic solicitări.
-            </p>
-          </article>
-
-          <article>
-            <span>02</span>
-            <h3>Formulare</h3>
-            <p>
-              Conectăm formularele cu tracking-ul astfel încât lead-urile să
-              poată fi analizate în contextul campaniilor.
-            </p>
-          </article>
-
-          <article>
-            <span>03</span>
-            <h3>Vânzări</h3>
-            <p>
-              Pentru e-commerce, urmărim evenimentele necesare pentru analiza
-              comenzilor și a valorii acestora.
-            </p>
-          </article>
-
-          <article>
-            <span>04</span>
-            <h3>GA4 & GTM</h3>
-            <p>
-              Folosim Google Analytics și Google Tag Manager atunci când
-              configurația proiectului cere măsurare și integrare avansată.
-            </p>
-          </article>
         </div>
       </section>
 
       {/* LANDING PAGE */}
       <section className="section">
-        <div className="service-dark-panel">
+        <div className="section-head">
           <div>
-            <div className="eyebrow">PAGINA DE DESTINAȚIE</div>
+            <div className="eyebrow">LANDING PAGE</div>
 
             <h2>
-              Reclama și pagina trebuie să continue aceeași promisiune.
+              Reclama și pagina de destinație trebuie să spună aceeași poveste.
             </h2>
-
-            <p>
-              Un click din Google Ads nu este rezultatul final. Utilizatorul
-              trebuie să ajungă într-o pagină relevantă pentru ceea ce a
-              căutat, cu informații clare și o acțiune ușor de realizat.
-            </p>
           </div>
 
-          <div className="service-flow">
-            <span>Căutare</span>
+          <p>
+            Un click nu este conversia. După ce utilizatorul ajunge pe site,
+            pagina trebuie să fie relevantă, ușor de înțeles și să ofere o
+            acțiune clară.
+          </p>
+        </div>
+
+        <div className="google-flow-panel">
+          <div className="google-flow">
+            <div>
+              <small>01</small>
+              <strong>Căutare</strong>
+              <span>intenție</span>
+            </div>
+
             <i>→</i>
-            <span>Anunț</span>
+
+            <div>
+              <small>02</small>
+              <strong>Anunț</strong>
+              <span>mesaj</span>
+            </div>
+
             <i>→</i>
-            <span>Landing page</span>
+
+            <div>
+              <small>03</small>
+              <strong>Landing page</strong>
+              <span>relevanță</span>
+            </div>
+
             <i>→</i>
-            <span>Lead / Vânzare</span>
+
+            <div>
+              <small>04</small>
+              <strong>Lead / Vânzare</strong>
+              <span>conversie</span>
+            </div>
           </div>
 
-          <div className="service-panel-tags">
+          <div className="google-flow-tags">
             <span>CTA clar</span>
-            <span>Conținut relevant</span>
             <span>Mobile-first</span>
+            <span>Conținut relevant</span>
+            <span>Formular</span>
+            <span>Apel</span>
             <span>Tracking</span>
           </div>
         </div>
       </section>
 
-      {/* OPTIMIZATION */}
-      <section className="section">
+      {/* TRACKING */}
+      <section className="section" id="tracking">
         <div className="section-head">
           <div>
-            <div className="eyebrow">OPTIMIZARE CONTINUĂ</div>
+            <div className="eyebrow">TRACKING GOOGLE ADS</div>
+
             <h2>
-              Campaniile nu se termină la momentul publicării.
+              Măsurăm ce produce campania, nu doar cât trafic trimite.
             </h2>
           </div>
 
           <p>
-            După lansare apar date noi. Analizăm ce caută utilizatorii, ce
-            anunțuri funcționează, ce conversii apar și unde există pierderi
-            sau oportunități de optimizare.
+            Conectăm campaniile cu website-ul și cu acțiunile care contează
+            pentru business, în funcție de configurația tehnică a proiectului.
           </p>
         </div>
 
-        <div className="optimization-grid">
-          <div>
-            <Settings2 />
-            <h3>Termeni de căutare</h3>
-            <p>Identificăm căutări relevante și căutări care trebuie excluse.</p>
-          </div>
+        <div className="google-tracking-grid">
+          <article>
+            <Phone />
+            <small>CONTACT</small>
+            <h3>Apeluri</h3>
+            <p>
+              Putem măsura interacțiunile de apel relevante pentru campaniile
+              care generează solicitări telefonice.
+            </p>
+          </article>
 
-          <div>
+          <article>
+            <Layers3 />
+            <small>LEAD</small>
+            <h3>Formulare</h3>
+            <p>
+              Lead-urile trimise prin formular pot fi urmărite și asociate cu
+              sursa traficului și campania.
+            </p>
+          </article>
+
+          <article>
+            <ShoppingCart />
+            <small>VÂNZARE</small>
+            <h3>Achiziții</h3>
+            <p>
+              Pentru magazine online putem urmări pașii principali până la
+              achiziție și valoarea comenzii.
+            </p>
+          </article>
+
+          <article>
             <BarChart3 />
-            <h3>Costuri și conversii</h3>
-            <p>Urmărim evoluția costurilor și a acțiunilor importante.</p>
+            <small>ANALIZĂ</small>
+            <h3>GA4 & GTM</h3>
+            <p>
+              Google Analytics 4 și Google Tag Manager pot completa măsurarea
+              atunci când proiectul necesită o configurare mai avansată.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      {/* OPTIMIZARE */}
+      <section className="section" id="optimizare">
+        <div className="section-head">
+          <div>
+            <div className="eyebrow">OPTIMIZARE CONTINUĂ</div>
+
+            <h2>
+              Campania nu se termină când apeși „Publică”.
+            </h2>
           </div>
 
-          <div>
-            <Target />
-            <h3>Structură și alocare</h3>
-            <p>Bugetele și prioritățile se pot modifica în funcție de date.</p>
-          </div>
+          <p>
+            După lansare apar date noi. Le analizăm pentru a vedea ce funcționează,
+            unde se pierde buget și ce merită testat sau ajustat.
+          </p>
+        </div>
+
+        <div className="google-optimization-grid">
+          {optimizationItems.map(({ icon: Icon, title, text }) => (
+            <article key={title}>
+              <Icon />
+              <h3>{title}</h3>
+              <p>{text}</p>
+            </article>
+          ))}
         </div>
       </section>
 
       {/* PROCESS */}
-      <section className="section">
+      <section className="section" id="proces">
         <div className="section-head">
           <div>
             <div className="eyebrow">CUM LUCRĂM</div>
-            <h2>De la contul Google Ads la conversie.</h2>
+
+            <h2>
+              De la prima analiză până la optimizarea continuă.
+            </h2>
           </div>
 
           <p>
-            Păstrăm procesul clar: analiză, structură, lansare, măsurare și
-            optimizare continuă.
+            Procesul este construit astfel încât promovarea, pagina și
+            măsurarea să funcționeze împreună.
           </p>
         </div>
 
-        <div className="process-grid">
-          {processSteps.map((step) => (
-            <article key={step.number}>
-              <span>{step.number}</span>
-              <h3>{step.title}</h3>
-              <p>{step.text}</p>
+        <div className="google-process-grid">
+          {processSteps.map(({ number, title, text }) => (
+            <article key={number}>
+              <span>{number}</span>
+              <h3>{title}</h3>
+              <p>{text}</p>
             </article>
           ))}
         </div>
@@ -629,31 +772,34 @@ export default function GoogleAdsPage() {
         <div className="section-head">
           <div>
             <div className="eyebrow">PENTRU CINE</div>
-            <h2>Google Ads pentru servicii, B2B și magazine online.</h2>
+
+            <h2>
+              Google Ads pentru servicii locale, B2B și magazine online.
+            </h2>
           </div>
 
           <p>
-            Strategia se schimbă în funcție de ceea ce vinzi și de modul în
-            care clientul ajunge la decizie.
+            Strategia se schimbă în funcție de produs, ciclul de vânzare și
+            acțiunea pe care vrei să o obții de la utilizator.
           </p>
         </div>
 
-        <div className="business-types-grid">
+        <div className="google-business-grid">
           <article>
             <small>SERVICII LOCALE</small>
             <h3>Apeluri și solicitări</h3>
             <p>
-              Potrivit pentru servicii în care clientul caută activ un
-              furnizor și poate contacta rapid firma.
+              Pentru servicii unde clientul caută activ un furnizor și poate
+              contacta rapid firma.
             </p>
           </article>
 
           <article>
-            <small>B2B</small>
-            <h3>Lead-uri calificate</h3>
+            <small>B2B & SERVICII</small>
+            <h3>Lead-uri comerciale</h3>
             <p>
-              Campanii structurate în jurul serviciilor, problemelor rezolvate
-              și acțiunilor comerciale relevante.
+              Campanii construite în jurul serviciului, problemei rezolvate și
+              acțiunii comerciale relevante.
             </p>
           </article>
 
@@ -661,47 +807,117 @@ export default function GoogleAdsPage() {
             <small>E-COMMERCE</small>
             <h3>Produse și vânzări</h3>
             <p>
-              Shopping, Performance Max, Merchant Center și măsurarea
-              achizițiilor.
+              Shopping, Performance Max, Merchant Center și tracking pentru
+              produse și achiziții.
             </p>
           </article>
         </div>
       </section>
 
+      {/* HARD SERVICE ADVANTAGE */}
+      <section className="section">
+        <div className="ecosystem-card ecosystem-card-v6 google-ecosystem-card">
+          <div>
+            <div className="eyebrow">GOOGLE ADS + WEBSITE + TRACKING</div>
+
+            <h2>
+              Google Ads funcționează mai bine când restul sistemului este
+              pregătit.
+            </h2>
+
+            <p>
+              O campanie bună poate aduce utilizatorul pe site, dar rezultatul
+              final depinde și de landing page, viteză, mesaj, formular,
+              apeluri și măsurarea conversiilor.
+            </p>
+
+            <div className="ecosystem-tags ecosystem-tags-v6">
+              <span>Google Search</span>
+              <span>Performance Max</span>
+              <span>Shopping</span>
+              <span>Landing Pages</span>
+              <span>GA4</span>
+              <span>Google Tag Manager</span>
+              <span>Tracking conversii</span>
+              <span>Website</span>
+            </div>
+
+            <div className="ecosystem-mini-flow-v5">
+              <span>Căutare</span>
+              <i>→</i>
+              <span>Campanie</span>
+              <i>→</i>
+              <span>Website</span>
+              <i>→</i>
+              <span>Lead / Vânzare</span>
+            </div>
+
+            <a className="primary" href="/#servicii">
+              Vezi toate serviciile
+              <ArrowRight size={17} />
+            </a>
+          </div>
+
+          <div className="google-side-stat">
+            <strong>UN SINGUR SISTEM</strong>
+            <span>
+              promovare · website · măsurare · suport
+            </span>
+
+            <div className="google-side-flow">
+              <div>ADS</div>
+              <div>WEB</div>
+              <div>TRACKING</div>
+              <div>LEAD</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* FAQ */}
-      <section className="section faq-section">
+      <section className="section" id="faq">
         <div className="section-head">
           <div>
             <div className="eyebrow">ÎNTREBĂRI FRECVENTE</div>
-            <h2>Întrebări despre administrarea Google Ads.</h2>
+
+            <h2>
+              Întrebări despre administrarea Google Ads.
+            </h2>
           </div>
+
+          <p>
+            Am inclus aici cele mai frecvente aspecte legate de administrare,
+            bugete, tracking și paginile de destinație.
+          </p>
         </div>
 
-        <div className="faq-grid">
-          {faq.map((item) => (
-            <article key={item.q}>
-              <h3>{item.q}</h3>
-              <p>{item.a}</p>
-            </article>
+        <div className="google-faq">
+          {faqItems.map(({ question, answer }) => (
+            <details key={question}>
+              <summary>{question}</summary>
+              <p>{answer}</p>
+            </details>
           ))}
         </div>
       </section>
 
       {/* CTA */}
-      <section className="section service-cta">
-        <div>
-          <div className="eyebrow">HAI SĂ DISCUTĂM</div>
+      <section className="section">
+        <div className="google-final-cta">
+          <div>
+            <div className="eyebrow">GOOGLE ADS</div>
 
-          <h2>
-            Ai deja un cont Google Ads sau vrei să pornești de la zero?
-          </h2>
+            <h2>
+              Ai deja un cont Google Ads sau vrei să pornești de la zero?
+            </h2>
 
-          <p>
-            Putem analiza situația actuală, obiectivele și pagina de destinație
-            și îți propunem o structură potrivită proiectului.
-          </p>
+            <p>
+              Spune-ne ce promovezi, ce obiectiv ai și dacă există deja un
+              cont sau o campanie. Putem analiza proiectul și următorii pași.
+            </p>
+          </div>
 
-          <div className="service-cta-actions">
+          <div className="google-final-actions">
             <a className="primary" href={phoneHref}>
               <Phone size={18} />
               0740 231 358
@@ -709,7 +925,7 @@ export default function GoogleAdsPage() {
 
             <a className="secondary" href="#contact">
               Solicita o ofertă
-              <ArrowRight size={18} />
+              <ArrowRight size={17} />
             </a>
           </div>
         </div>
@@ -718,13 +934,15 @@ export default function GoogleAdsPage() {
       {/* CONTACT */}
       <section className="section contact-section" id="contact">
         <div className="contact-copy">
-          <div className="eyebrow">GOOGLE ADS</div>
+          <div className="eyebrow">HAI SĂ DISCUTĂM</div>
 
-          <h2>Cere o ofertă pentru administrarea campaniilor tale.</h2>
+          <h2>
+            Cere o ofertă pentru administrarea campaniilor Google Ads.
+          </h2>
 
           <p>
-            Spune-ne ce promovezi, ce obiectiv ai și dacă ai deja un cont
-            Google Ads. Analizăm proiectul și revenim cu următorii pași.
+            Completează formularul și spune-ne ce promovezi, ce urmărești și
+            dacă ai deja un cont Google Ads. Solicitarea ajunge direct la noi.
           </p>
 
           <a className="contact-phone" href={phoneHref}>
@@ -735,9 +953,52 @@ export default function GoogleAdsPage() {
 
         <div className="contact-form-column">
           <ContactForm />
+
+          <aside className="company-details" aria-label="Datele firmei">
+            <div className="company-details-header">
+              <div className="company-details-icon" aria-hidden="true">
+                <svg
+                  width="28"
+                  height="28"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="1.6"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                >
+                  <path d="M3 21h18" />
+                  <path d="M5 21V3h10v18" />
+                  <path d="M15 9h4v12" />
+                  <path d="M8 6h1m2 0h1M8 9h1m2 0h1M8 12h1m2 0h1" />
+                  <path d="M9 21v-5h3v5M17 12v1m0 3v1" />
+                </svg>
+              </div>
+
+              <div>
+                <p className="company-details-label">DATELE FIRMEI</p>
+                <h3>HARD SERVICE SRL</h3>
+              </div>
+            </div>
+
+            <dl className="company-details-grid">
+              <div>
+                <dt>CUI</dt>
+                <dd>5451133</dd>
+              </div>
+
+              <div>
+                <dt>Data înființării</dt>
+                <dd>
+                  <time dateTime="1994-03-17">17.03.1994</time>
+                </dd>
+              </div>
+            </dl>
+          </aside>
         </div>
       </section>
 
+      {/* FOOTER */}
       <footer>
         <a className="brand brand-v4" href="/">
           <b>HARD SERVICE</b>
@@ -745,6 +1006,29 @@ export default function GoogleAdsPage() {
         </a>
 
         <p>Google Ads · Meta Ads · TikTok Ads · Web · Tracking</p>
+
+        <div
+          style={{
+            display: 'flex',
+            justifyContent: 'center',
+            alignItems: 'center',
+            gap: '16px',
+            flexWrap: 'wrap',
+            margin: '10px 0 16px',
+            fontSize: '12px',
+            opacity: 0.7,
+          }}
+        >
+          <PolicyLink href="/politica-confidentialitate">
+            Politică de confidențialitate
+          </PolicyLink>
+
+          <span>·</span>
+
+          <PolicyLink href="/politica-cookie-uri">
+            Politică de cookie-uri
+          </PolicyLink>
+        </div>
 
         <a href={phoneHref}>0740 231 358</a>
       </footer>
